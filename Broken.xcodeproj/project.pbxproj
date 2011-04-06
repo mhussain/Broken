@@ -20,6 +20,7 @@
 		21D278E2134BF0BB0063DB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D278E0134BF0BB0063DB03 /* InfoPlist.strings */; };
 		21D278E5134BF0BB0063DB03 /* BrokenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 21D278E4134BF0BB0063DB03 /* BrokenTests.h */; };
 		21D278E7134BF0BB0063DB03 /* BrokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278E6134BF0BB0063DB03 /* BrokenTests.m */; };
+		21DAEF07134C4A890077FDE8 /* JenkinsInstanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		21D278E3134BF0BB0063DB03 /* BrokenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrokenTests-Prefix.pch"; sourceTree = "<group>"; };
 		21D278E4134BF0BB0063DB03 /* BrokenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrokenTests.h; sourceTree = "<group>"; };
 		21D278E6134BF0BB0063DB03 /* BrokenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokenTests.m; sourceTree = "<group>"; };
+		21DAEF05134C4A890077FDE8 /* JenkinsInstanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JenkinsInstanceController.h; sourceTree = "<group>"; };
+		21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JenkinsInstanceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 		21D278A8134BF0BB0063DB03 = {
 			isa = PBXGroup;
 			children = (
+				21D278F6134BFBF50063DB03 /* Controllers */,
 				21D278BD134BF0BB0063DB03 /* Broken */,
 				21D278DD134BF0BB0063DB03 /* BrokenTests */,
 				21D278B6134BF0BB0063DB03 /* Frameworks */,
@@ -147,6 +151,15 @@
 				21D278E3134BF0BB0063DB03 /* BrokenTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21D278F6134BFBF50063DB03 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21DAEF05134C4A890077FDE8 /* JenkinsInstanceController.h */,
+				21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +271,7 @@
 				21D278C5134BF0BB0063DB03 /* main.m in Sources */,
 				21D278C8134BF0BB0063DB03 /* BrokenAppDelegate.m in Sources */,
 				21D278CE134BF0BB0063DB03 /* RootViewController.m in Sources */,
+				21DAEF07134C4A890077FDE8 /* JenkinsInstanceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +436,7 @@
 				21D278EC134BF0BB0063DB03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21D278ED134BF0BB0063DB03 /* Build configuration list for PBXNativeTarget "BrokenTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +445,7 @@
 				21D278EF134BF0BB0063DB03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

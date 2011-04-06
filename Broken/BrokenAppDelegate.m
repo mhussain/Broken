@@ -10,7 +10,6 @@
 @implementation BrokenAppDelegate
 
 @synthesize window=_window;
-
 @synthesize navigationController=_navigationController;
 
 #pragma mark -
@@ -19,19 +18,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 {
   _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  [_window setBackgroundColor:[UIColor blueColor]];
+  [_window setBackgroundColor:[UIColor whiteColor]];
   
   _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
   
-  //buildsTableController_ = [[BuildsTableViewController alloc] initWithStyle:UITableViewStylePlain];   
-  //[navigationController_ pushViewController:buildsTableController_ animated:NO];
+  jenkins_instance_controller = [[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil];   
+  [_navigationController pushViewController:jenkins_instance_controller animated:NO];
   
   [_window setRootViewController:_navigationController];
 
   [self setWindow:_window];
   [[self window] makeKeyAndVisible];
 
-  //[self displaySplash];
   return YES;
 }
 
@@ -77,9 +75,10 @@
 
 - (void)dealloc
 {
-    [_window release];
-    [_navigationController release];
-    [super dealloc];
+	[jenkins_instance_controller release];
+  [_window release];
+  [_navigationController release];
+  [super dealloc];
 }
 
 @end

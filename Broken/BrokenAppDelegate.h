@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JenkinsInstanceController.h"
 
 @interface BrokenAppDelegate : NSObject <UIApplicationDelegate> {
-
+	JenkinsInstanceController *jenkins_instance_controller;
 }
 
 @property (nonatomic, retain) UIWindow *window;
-
 @property (nonatomic, retain) UINavigationController *navigationController;
 
 @end
