@@ -30,6 +30,7 @@
 		210B695B134C680100C210B9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B695A134C680100C210B9 /* libz.1.2.3.dylib */; };
 		210B695D134C685A00C210B9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B695C134C685A00C210B9 /* libz.1.1.3.dylib */; };
 		210B6961134C687E00C210B9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B695F134C687E00C210B9 /* ASIAuthenticationDialog.m */; };
+		213BCA94134D15E300F74194 /* BuildsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCA93134D15E300F74194 /* BuildsController.m */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -103,6 +104,8 @@
 		210B695E134C687E00C210B9 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = "lib/asi-http-request/Classes/ASIAuthenticationDialog.h"; sourceTree = "<group>"; };
 		210B695F134C687E00C210B9 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = "lib/asi-http-request/Classes/ASIAuthenticationDialog.m"; sourceTree = "<group>"; };
 		210B6960134C687E00C210B9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "lib/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = "<group>"; };
+		213BCA92134D15E300F74194 /* BuildsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsController.h; sourceTree = "<group>"; };
+		213BCA93134D15E300F74194 /* BuildsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsController.m; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -302,6 +305,8 @@
 			children = (
 				21DAEF05134C4A890077FDE8 /* JenkinsInstanceController.h */,
 				21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */,
+				213BCA92134D15E300F74194 /* BuildsController.h */,
+				213BCA93134D15E300F74194 /* BuildsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				210B694F134C675C00C210B9 /* ASINetworkQueue.m in Sources */,
 				210B6952134C676500C210B9 /* Reachability.m in Sources */,
 				210B6961134C687E00C210B9 /* ASIAuthenticationDialog.m in Sources */,
+				213BCA94134D15E300F74194 /* BuildsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

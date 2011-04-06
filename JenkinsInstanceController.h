@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BuildsController.h"
 
 @interface JenkinsInstanceController : UIViewController 
 {
-	    
+  BuildsController *builds;   
 }
 
 @property (nonatomic, retain) UITextField *host;

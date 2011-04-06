@@ -75,10 +75,21 @@
     [alert show];
   }
   
+  builds = [[BuildsController alloc] initWithStyle:UITableViewStyleGrouped address:[NSString stringWithFormat:@"%@:%@",hostname,port]];
+  
+	[[ self navigationItem ] setBackBarButtonItem: [[[UIBarButtonItem alloc] initWithTitle:@"Connect" 
+                                                                                   style:UIBarButtonItemStyleBordered 
+                                                                                  target:nil 
+                                                                                  action:nil] autorelease]];
+  
+  [[self navigationController] pushViewController:builds animated:YES];
+  
+  
 }
 
 - (void)dealloc
 {
+  [builds release];
   [_host release];
   [_port release];
   [super dealloc];
