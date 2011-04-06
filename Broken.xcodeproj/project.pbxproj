@@ -21,6 +21,7 @@
 		21D278E5134BF0BB0063DB03 /* BrokenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 21D278E4134BF0BB0063DB03 /* BrokenTests.h */; };
 		21D278E7134BF0BB0063DB03 /* BrokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278E6134BF0BB0063DB03 /* BrokenTests.m */; };
 		21DAEF07134C4A890077FDE8 /* JenkinsInstanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */; };
+		21DAF027134C55120077FDE8 /* BuildsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAF026134C55120077FDE8 /* BuildsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		21D278E6134BF0BB0063DB03 /* BrokenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokenTests.m; sourceTree = "<group>"; };
 		21DAEF05134C4A890077FDE8 /* JenkinsInstanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JenkinsInstanceController.h; sourceTree = "<group>"; };
 		21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JenkinsInstanceController.m; sourceTree = "<group>"; };
+		21DAF025134C55120077FDE8 /* BuildsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsController.h; sourceTree = "<group>"; };
+		21DAF026134C55120077FDE8 /* BuildsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 			children = (
 				21DAEF05134C4A890077FDE8 /* JenkinsInstanceController.h */,
 				21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */,
+				21DAF025134C55120077FDE8 /* BuildsController.h */,
+				21DAF026134C55120077FDE8 /* BuildsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				21D278C8134BF0BB0063DB03 /* BrokenAppDelegate.m in Sources */,
 				21D278CE134BF0BB0063DB03 /* RootViewController.m in Sources */,
 				21DAEF07134C4A890077FDE8 /* JenkinsInstanceController.m in Sources */,
+				21DAF027134C55120077FDE8 /* BuildsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
