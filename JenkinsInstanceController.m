@@ -65,7 +65,16 @@
   NSString *hostname = [_host text];
   NSString *port = [_port text];
   
-  NSLog(@"Connecting to %@:%@", hostname, port);
+	if (nil == hostname || nil == port) 
+  {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Required Parameters" 
+                                                  message:@"Please enter hostname and port number" 
+                                                 delegate:nil 
+                                        cancelButtonTitle:@"OK" 
+                                         otherButtonTitles:nil, nil] autorelease];
+    [alert show];
+  }
+  
 }
 
 - (void)dealloc
