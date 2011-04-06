@@ -31,6 +31,11 @@
 		210B695D134C685A00C210B9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B695C134C685A00C210B9 /* libz.1.1.3.dylib */; };
 		210B6961134C687E00C210B9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B695F134C687E00C210B9 /* ASIAuthenticationDialog.m */; };
 		213BCA94134D15E300F74194 /* BuildsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCA93134D15E300F74194 /* BuildsController.m */; };
+		213BCA9F134D185100F74194 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCA9E134D185100F74194 /* NSString+Utilities.m */; };
+		213BCAA2134D188E00F74194 /* NSArray+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA1134D188E00F74194 /* NSArray+Blocks.m */; };
+		213BCAA5134D18BD00F74194 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA4134D18BD00F74194 /* UIColor+Hex.m */; };
+		213BCAA9134D19B800F74194 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA8134D19B800F74194 /* Build.m */; };
+		213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAAB134D19ED00F74194 /* NSArray+Build.m */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -106,6 +111,16 @@
 		210B6960134C687E00C210B9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "lib/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = "<group>"; };
 		213BCA92134D15E300F74194 /* BuildsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsController.h; sourceTree = "<group>"; };
 		213BCA93134D15E300F74194 /* BuildsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsController.m; sourceTree = "<group>"; };
+		213BCA9D134D185100F74194 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		213BCA9E134D185100F74194 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
+		213BCAA0134D188E00F74194 /* NSArray+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Blocks.h"; sourceTree = "<group>"; };
+		213BCAA1134D188E00F74194 /* NSArray+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Blocks.m"; sourceTree = "<group>"; };
+		213BCAA3134D18BD00F74194 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		213BCAA4134D18BD00F74194 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		213BCAA7134D19B800F74194 /* Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Build.h; sourceTree = "<group>"; };
+		213BCAA8134D19B800F74194 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
+		213BCAAA134D19ED00F74194 /* NSArray+Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Build.h"; sourceTree = "<group>"; };
+		213BCAAB134D19ED00F74194 /* NSArray+Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Build.m"; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -221,9 +236,35 @@
 			name = "asi-http-request";
 			sourceTree = "<group>";
 		};
+		213BCA9C134D182C00F74194 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				213BCA9D134D185100F74194 /* NSString+Utilities.h */,
+				213BCA9E134D185100F74194 /* NSString+Utilities.m */,
+				213BCAA0134D188E00F74194 /* NSArray+Blocks.h */,
+				213BCAA1134D188E00F74194 /* NSArray+Blocks.m */,
+				213BCAA3134D18BD00F74194 /* UIColor+Hex.h */,
+				213BCAA4134D18BD00F74194 /* UIColor+Hex.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		213BCAA6134D19A700F74194 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				213BCAA7134D19B800F74194 /* Build.h */,
+				213BCAA8134D19B800F74194 /* Build.m */,
+				213BCAAA134D19ED00F74194 /* NSArray+Build.h */,
+				213BCAAB134D19ED00F74194 /* NSArray+Build.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		21D278A8134BF0BB0063DB03 = {
 			isa = PBXGroup;
 			children = (
+				213BCAA6134D19A700F74194 /* Model */,
+				213BCA9C134D182C00F74194 /* Common */,
 				210B68D9134C639D00C210B9 /* Third Party */,
 				21D278F6134BFBF50063DB03 /* Controllers */,
 				21D278BD134BF0BB0063DB03 /* Broken */,
@@ -440,6 +481,11 @@
 				210B6952134C676500C210B9 /* Reachability.m in Sources */,
 				210B6961134C687E00C210B9 /* ASIAuthenticationDialog.m in Sources */,
 				213BCA94134D15E300F74194 /* BuildsController.m in Sources */,
+				213BCA9F134D185100F74194 /* NSString+Utilities.m in Sources */,
+				213BCAA2134D188E00F74194 /* NSArray+Blocks.m in Sources */,
+				213BCAA5134D18BD00F74194 /* UIColor+Hex.m in Sources */,
+				213BCAA9134D19B800F74194 /* Build.m in Sources */,
+				213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

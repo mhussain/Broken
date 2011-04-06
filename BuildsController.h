@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
+#import "JSON.h"
+#import "NSArray+Build.h"
+#import "NSArray+Blocks.h"
+#import "Build.h"
 
 
-@interface BuildsController : UITableViewController {
-    
+@interface BuildsController : UITableViewController <ASIHTTPRequestDelegate>
+{
+  NSArray *_builds;
 }
 
 -(id)initWithStyle:(UITableViewStyle)style address:(NSString *)address;
+@property (nonatomic, copy) NSArray *builds;
 
 @end

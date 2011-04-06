@@ -75,14 +75,14 @@
     [alert show];
   }
   
-  builds = [[BuildsController alloc] initWithStyle:UITableViewStyleGrouped address:[NSString stringWithFormat:@"%@:%@",hostname,port]];
+  BuildsController *builds_controller = [[[BuildsController alloc] initWithStyle:UITableViewStyleGrouped address:[NSString stringWithFormat:@"%@:%@/api/json",hostname,port]] autorelease];
   
 	[[ self navigationItem ] setBackBarButtonItem: [[[UIBarButtonItem alloc] initWithTitle:@"Connect" 
                                                                                    style:UIBarButtonItemStyleBordered 
                                                                                   target:nil 
                                                                                   action:nil] autorelease]];
   
-  [[self navigationController] pushViewController:builds animated:YES];
+  [[self navigationController] pushViewController:builds_controller animated:NO];
   
   
 }
