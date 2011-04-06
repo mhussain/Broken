@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
+		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
+		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
+		21D278C2134BF0BB0063DB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D278C0134BF0BB0063DB03 /* InfoPlist.strings */; };
+		21D278C5134BF0BB0063DB03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278C4134BF0BB0063DB03 /* main.m */; };
+		21D278C8134BF0BB0063DB03 /* BrokenAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278C7134BF0BB0063DB03 /* BrokenAppDelegate.m */; };
+		21D278CB134BF0BB0063DB03 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D278C9134BF0BB0063DB03 /* MainWindow.xib */; };
+		21D278CE134BF0BB0063DB03 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278CD134BF0BB0063DB03 /* RootViewController.m */; };
+		21D278D1134BF0BB0063DB03 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D278CF134BF0BB0063DB03 /* RootViewController.xib */; };
+		21D278D8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
+		21D278D9134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
+		21D278DA134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
+		21D278E2134BF0BB0063DB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D278E0134BF0BB0063DB03 /* InfoPlist.strings */; };
+		21D278E5134BF0BB0063DB03 /* BrokenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 21D278E4134BF0BB0063DB03 /* BrokenTests.h */; };
+		21D278E7134BF0BB0063DB03 /* BrokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278E6134BF0BB0063DB03 /* BrokenTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21D278DB134BF0BB0063DB03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D278AA134BF0BB0063DB03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D278B2134BF0BB0063DB03;
+			remoteInfo = Broken;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		21D278BF134BF0BB0063DB03 /* Broken-Info.plist */ = {isa = PBXFileReference; path = "Broken-Info.plist"; sourceTree = "<group>"; };
+		21D278C1134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21D278C3134BF0BB0063DB03 /* Broken-Prefix.pch */ = {isa = PBXFileReference; path = "Broken-Prefix.pch"; sourceTree = "<group>"; };
+		21D278C4134BF0BB0063DB03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21D278C6134BF0BB0063DB03 /* BrokenAppDelegate.h */ = {isa = PBXFileReference; path = BrokenAppDelegate.h; sourceTree = "<group>"; };
+		21D278C7134BF0BB0063DB03 /* BrokenAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokenAppDelegate.m; sourceTree = "<group>"; };
+		21D278CA134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		21D278CC134BF0BB0063DB03 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		21D278CD134BF0BB0063DB03 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		21D278D0134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		21D278D7134BF0BB0063DB03 /* BrokenTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrokenTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D278DF134BF0BB0063DB03 /* BrokenTests-Info.plist */ = {isa = PBXFileReference; path = "BrokenTests-Info.plist"; sourceTree = "<group>"; };
+		21D278E1134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21D278E3134BF0BB0063DB03 /* BrokenTests-Prefix.pch */ = {isa = PBXFileReference; path = "BrokenTests-Prefix.pch"; sourceTree = "<group>"; };
+		21D278E4134BF0BB0063DB03 /* BrokenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrokenTests.h; sourceTree = "<group>"; };
+		21D278E6134BF0BB0063DB03 /* BrokenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokenTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21D278B0134BF0BB0063DB03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */,
+				21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */,
+				21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D278D3134BF0BB0063DB03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D278D8134BF0BB0063DB03 /* UIKit.framework in Frameworks */,
+				21D278D9134BF0BB0063DB03 /* Foundation.framework in Frameworks */,
+				21D278DA134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21D278A8134BF0BB0063DB03 = {
+			isa = PBXGroup;
+			children = (
+				21D278BD134BF0BB0063DB03 /* Broken */,
+				21D278DD134BF0BB0063DB03 /* BrokenTests */,
+				21D278B6134BF0BB0063DB03 /* Frameworks */,
+				21D278B4134BF0BB0063DB03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21D278B4134BF0BB0063DB03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21D278B3134BF0BB0063DB03 /* Broken.app */,
+				21D278D7134BF0BB0063DB03 /* BrokenTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21D278B6134BF0BB0063DB03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21D278B7134BF0BB0063DB03 /* UIKit.framework */,
+				21D278B9134BF0BB0063DB03 /* Foundation.framework */,
+				21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21D278BD134BF0BB0063DB03 /* Broken */ = {
+			isa = PBXGroup;
+			children = (
+				21D278C6134BF0BB0063DB03 /* BrokenAppDelegate.h */,
+				21D278C7134BF0BB0063DB03 /* BrokenAppDelegate.m */,
+				21D278C9134BF0BB0063DB03 /* MainWindow.xib */,
+				21D278CC134BF0BB0063DB03 /* RootViewController.h */,
+				21D278CD134BF0BB0063DB03 /* RootViewController.m */,
+				21D278CF134BF0BB0063DB03 /* RootViewController.xib */,
+				21D278BE134BF0BB0063DB03 /* Supporting Files */,
+			);
+			path = Broken;
+			sourceTree = "<group>";
+		};
+		21D278BE134BF0BB0063DB03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21D278BF134BF0BB0063DB03 /* Broken-Info.plist */,
+				21D278C0134BF0BB0063DB03 /* InfoPlist.strings */,
+				21D278C3134BF0BB0063DB03 /* Broken-Prefix.pch */,
+				21D278C4134BF0BB0063DB03 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21D278DD134BF0BB0063DB03 /* BrokenTests */ = {
+			isa = PBXGroup;
+			children = (
+				21D278E4134BF0BB0063DB03 /* BrokenTests.h */,
+				21D278E6134BF0BB0063DB03 /* BrokenTests.m */,
+				21D278DE134BF0BB0063DB03 /* Supporting Files */,
+			);
+			path = BrokenTests;
+			sourceTree = "<group>";
+		};
+		21D278DE134BF0BB0063DB03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21D278DF134BF0BB0063DB03 /* BrokenTests-Info.plist */,
+				21D278E0134BF0BB0063DB03 /* InfoPlist.strings */,
+				21D278E3134BF0BB0063DB03 /* BrokenTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21D278B2134BF0BB0063DB03 /* Broken */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D278EA134BF0BB0063DB03 /* Build configuration list for PBXNativeTarget "Broken" */;
+			buildPhases = (
+				21D278AF134BF0BB0063DB03 /* Sources */,
+				21D278B0134BF0BB0063DB03 /* Frameworks */,
+				21D278B1134BF0BB0063DB03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Broken;
+			productName = Broken;
+			productReference = 21D278B3134BF0BB0063DB03 /* Broken.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21D278D6134BF0BB0063DB03 /* BrokenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D278ED134BF0BB0063DB03 /* Build configuration list for PBXNativeTarget "BrokenTests" */;
+			buildPhases = (
+				21D278D2134BF0BB0063DB03 /* Sources */,
+				21D278D3134BF0BB0063DB03 /* Frameworks */,
+				21D278D4134BF0BB0063DB03 /* Resources */,
+				21D278D5134BF0BB0063DB03 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21D278DC134BF0BB0063DB03 /* PBXTargetDependency */,
+			);
+			name = BrokenTests;
+			productName = BrokenTests;
+			productReference = 21D278D7134BF0BB0063DB03 /* BrokenTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21D278AA134BF0BB0063DB03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "REA Group";
+			};
+			buildConfigurationList = 21D278AD134BF0BB0063DB03 /* Build configuration list for PBXProject "Broken" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 21D278A8134BF0BB0063DB03;
+			productRefGroup = 21D278B4134BF0BB0063DB03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21D278B2134BF0BB0063DB03 /* Broken */,
+				21D278D6134BF0BB0063DB03 /* BrokenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21D278B1134BF0BB0063DB03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D278C2134BF0BB0063DB03 /* InfoPlist.strings in Resources */,
+				21D278CB134BF0BB0063DB03 /* MainWindow.xib in Resources */,
+				21D278D1134BF0BB0063DB03 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D278D4134BF0BB0063DB03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D278E2134BF0BB0063DB03 /* InfoPlist.strings in Resources */,
+				21D278E5134BF0BB0063DB03 /* BrokenTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21D278D5134BF0BB0063DB03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21D278AF134BF0BB0063DB03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D278C5134BF0BB0063DB03 /* main.m in Sources */,
+				21D278C8134BF0BB0063DB03 /* BrokenAppDelegate.m in Sources */,
+				21D278CE134BF0BB0063DB03 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D278D2134BF0BB0063DB03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D278E7134BF0BB0063DB03 /* BrokenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21D278DC134BF0BB0063DB03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D278B2134BF0BB0063DB03 /* Broken */;
+			targetProxy = 21D278DB134BF0BB0063DB03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21D278C0134BF0BB0063DB03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D278C1134BF0BB0063DB03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		21D278C9134BF0BB0063DB03 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D278CA134BF0BB0063DB03 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		21D278CF134BF0BB0063DB03 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D278D0134BF0BB0063DB03 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		21D278E0134BF0BB0063DB03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D278E1134BF0BB0063DB03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21D278E8134BF0BB0063DB03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		21D278E9134BF0BB0063DB03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		21D278EB134BF0BB0063DB03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Broken/Broken-Prefix.pch";
+				INFOPLIST_FILE = "Broken/Broken-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		21D278EC134BF0BB0063DB03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Broken/Broken-Prefix.pch";
+				INFOPLIST_FILE = "Broken/Broken-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		21D278EE134BF0BB0063DB03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Broken.app/Broken";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrokenTests/BrokenTests-Prefix.pch";
+				INFOPLIST_FILE = "BrokenTests/BrokenTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		21D278EF134BF0BB0063DB03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Broken.app/Broken";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrokenTests/BrokenTests-Prefix.pch";
+				INFOPLIST_FILE = "BrokenTests/BrokenTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21D278AD134BF0BB0063DB03 /* Build configuration list for PBXProject "Broken" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D278E8134BF0BB0063DB03 /* Debug */,
+				21D278E9134BF0BB0063DB03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D278EA134BF0BB0063DB03 /* Build configuration list for PBXNativeTarget "Broken" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D278EB134BF0BB0063DB03 /* Debug */,
+				21D278EC134BF0BB0063DB03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21D278ED134BF0BB0063DB03 /* Build configuration list for PBXNativeTarget "BrokenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D278EE134BF0BB0063DB03 /* Debug */,
+				21D278EF134BF0BB0063DB03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21D278AA134BF0BB0063DB03 /* Project object */;
+}
