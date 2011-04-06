@@ -7,7 +7,7 @@
 //
 
 #import "JenkinsInstanceController.h"
-
+#import "JSON.h"
 
 @implementation JenkinsInstanceController
 
