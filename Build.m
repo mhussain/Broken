@@ -21,11 +21,13 @@
   [build setName:[dictionary objectForKey:@"name"]];
   [build setUrl:[dictionary objectForKey:@"url"]];
   [build setCurrentState:[UIColor grayColor]];
+  [build setBroken:NO];
   
   NSString *color = [dictionary objectForKey:@"color"];
   
   if ([color isEqualToString:@"red"]) {
     [build setCurrentState:[UIColor redColor]];
+    [build setBroken:YES];
   }
   else if([color isEqualToString:@"blue"]) {
     [build setCurrentState:[UIColor colorWithHex:0x006633]];
@@ -53,6 +55,18 @@
 @synthesize name = name_;
 @synthesize url = url_;
 @synthesize currentState = currentState_;
+
+- (void)setBroken:(BOOL)yesOrNo;
+{
+	broken = yesOrNo;
+}
+
+- (BOOL)isBroken;
+{
+  return broken;
+}
+
+
 
 //- (UIColor *)color;
 //{

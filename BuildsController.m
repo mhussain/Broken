@@ -146,8 +146,12 @@
   
   Build *build = [[self builds] objectAtIndex:[indexPath row]];
   [[cell textLabel] setText:[build name]];
-  NSLog(@"--->%@", [build currentState]);
   [[cell textLabel] setTextColor:[build currentState]];
+  
+  if ([build isBroken])
+  {
+    [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+  }
   
   return cell;
 }
