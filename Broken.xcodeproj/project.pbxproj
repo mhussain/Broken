@@ -13,9 +13,7 @@
 		21D278C2134BF0BB0063DB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D278C0134BF0BB0063DB03 /* InfoPlist.strings */; };
 		21D278C5134BF0BB0063DB03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278C4134BF0BB0063DB03 /* main.m */; };
 		21D278C8134BF0BB0063DB03 /* BrokenAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278C7134BF0BB0063DB03 /* BrokenAppDelegate.m */; };
-		21D278CB134BF0BB0063DB03 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D278C9134BF0BB0063DB03 /* MainWindow.xib */; };
 		21D278CE134BF0BB0063DB03 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D278CD134BF0BB0063DB03 /* RootViewController.m */; };
-		21D278D1134BF0BB0063DB03 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D278CF134BF0BB0063DB03 /* RootViewController.xib */; };
 		21D278D8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278D9134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278DA134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -39,20 +37,18 @@
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		21D278BF134BF0BB0063DB03 /* Broken-Info.plist */ = {isa = PBXFileReference; path = "Broken-Info.plist"; sourceTree = "<group>"; };
+		21D278BF134BF0BB0063DB03 /* Broken-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Broken-Info.plist"; sourceTree = "<group>"; };
 		21D278C1134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		21D278C3134BF0BB0063DB03 /* Broken-Prefix.pch */ = {isa = PBXFileReference; path = "Broken-Prefix.pch"; sourceTree = "<group>"; };
+		21D278C3134BF0BB0063DB03 /* Broken-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Broken-Prefix.pch"; sourceTree = "<group>"; };
 		21D278C4134BF0BB0063DB03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		21D278C6134BF0BB0063DB03 /* BrokenAppDelegate.h */ = {isa = PBXFileReference; path = BrokenAppDelegate.h; sourceTree = "<group>"; };
+		21D278C6134BF0BB0063DB03 /* BrokenAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrokenAppDelegate.h; sourceTree = "<group>"; };
 		21D278C7134BF0BB0063DB03 /* BrokenAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokenAppDelegate.m; sourceTree = "<group>"; };
-		21D278CA134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		21D278CC134BF0BB0063DB03 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		21D278CC134BF0BB0063DB03 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		21D278CD134BF0BB0063DB03 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		21D278D0134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		21D278D7134BF0BB0063DB03 /* BrokenTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrokenTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		21D278DF134BF0BB0063DB03 /* BrokenTests-Info.plist */ = {isa = PBXFileReference; path = "BrokenTests-Info.plist"; sourceTree = "<group>"; };
+		21D278DF134BF0BB0063DB03 /* BrokenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrokenTests-Info.plist"; sourceTree = "<group>"; };
 		21D278E1134BF0BB0063DB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		21D278E3134BF0BB0063DB03 /* BrokenTests-Prefix.pch */ = {isa = PBXFileReference; path = "BrokenTests-Prefix.pch"; sourceTree = "<group>"; };
+		21D278E3134BF0BB0063DB03 /* BrokenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrokenTests-Prefix.pch"; sourceTree = "<group>"; };
 		21D278E4134BF0BB0063DB03 /* BrokenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrokenTests.h; sourceTree = "<group>"; };
 		21D278E6134BF0BB0063DB03 /* BrokenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokenTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,10 +111,8 @@
 			children = (
 				21D278C6134BF0BB0063DB03 /* BrokenAppDelegate.h */,
 				21D278C7134BF0BB0063DB03 /* BrokenAppDelegate.m */,
-				21D278C9134BF0BB0063DB03 /* MainWindow.xib */,
 				21D278CC134BF0BB0063DB03 /* RootViewController.h */,
 				21D278CD134BF0BB0063DB03 /* RootViewController.m */,
-				21D278CF134BF0BB0063DB03 /* RootViewController.xib */,
 				21D278BE134BF0BB0063DB03 /* Supporting Files */,
 			);
 			path = Broken;
@@ -226,8 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D278C2134BF0BB0063DB03 /* InfoPlist.strings in Resources */,
-				21D278CB134BF0BB0063DB03 /* MainWindow.xib in Resources */,
-				21D278D1134BF0BB0063DB03 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,22 +286,6 @@
 				21D278C1134BF0BB0063DB03 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		21D278C9134BF0BB0063DB03 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21D278CA134BF0BB0063DB03 /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		21D278CF134BF0BB0063DB03 /* RootViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21D278D0134BF0BB0063DB03 /* en */,
-			);
-			name = RootViewController.xib;
 			sourceTree = "<group>";
 		};
 		21D278E0134BF0BB0063DB03 /* InfoPlist.strings */ = {

@@ -3,26 +3,38 @@
 //  Broken
 //
 //  Created by Mujtaba Hussain on 6/04/11.
-//  Copyright 2011 REA Group. All rights reserved.
 //
 
 #import "BrokenAppDelegate.h"
 
 @implementation BrokenAppDelegate
 
-
 @synthesize window=_window;
 
 @synthesize navigationController=_navigationController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+#pragma mark -
+#pragma mark Application lifecycle
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 {
-    // Override point for customization after application launch.
-    // Add the navigation controller's view to the window and display.
-    self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
-    return YES;
+  _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  [_window setBackgroundColor:[UIColor blueColor]];
+  
+  _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
+  
+  //buildsTableController_ = [[BuildsTableViewController alloc] initWithStyle:UITableViewStylePlain];   
+  //[navigationController_ pushViewController:buildsTableController_ animated:NO];
+  
+  [_window setRootViewController:_navigationController];
+
+  [self setWindow:_window];
+  [[self window] makeKeyAndVisible];
+
+  //[self displaySplash];
+  return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
