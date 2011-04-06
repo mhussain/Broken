@@ -33,13 +33,33 @@
     _host = [[UITextField alloc] initWithFrame:CGRectMake(140., 10., 170., 30.)];
     [_host setBorderStyle:UITextBorderStyleBezel];
     [_host setAutocorrectionType:UITextAutocorrectionTypeNo];
-    [_host setPlaceholder:@"http://...."];
     
+    NSString *hostname = [self retrieveFromUserDefaults:@"host"];
+    if (hostname) 
+    {
+      [_host setText:hostname];
+    }
+    else
+    {
+      [_host setPlaceholder:@"http://...."];
+    }
+   
     _port = [[UITextField alloc] initWithFrame:CGRectMake(140., 50., 170., 30.)];
     [_port setBorderStyle:UITextBorderStyleBezel];
     [_port setAutocorrectionType:UITextAutocorrectionTypeNo]; 
     [_port setKeyboardType:UIKeyboardTypeNumberPad];
-    [_port setPlaceholder:@"8080"];
+    //[_port setPlaceholder:@"8080"];
+
+    NSString *port = [self retrieveFromUserDefaults:@"port"];    
+    if (port) 
+    {
+      [_port setText:port];
+    }
+    else
+    {
+      [_port setPlaceholder:@"8080"];
+    }
+
     
     UIButton *connect = [[[UIButton alloc] initWithFrame:CGRectMake(30., 100., 250., 30.)] autorelease];
     [connect setBackgroundColor:[UIColor redColor]];
@@ -60,6 +80,27 @@
   return self;
 }
 
+-(void)saveToUserDefaults:(NSString*)data forKey:(NSString *)key;
+{
+	NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+  
+	if (standardUserDefaults) {
+		[standardUserDefaults setObject:data forKey:key];
+		[standardUserDefaults synchronize];
+	}
+}
+
+-(NSString*)retrieveFromUserDefaults:(NSString *)key;
+{
+	NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+	NSString *val = nil;
+	
+	if (standardUserDefaults) 
+		val = [standardUserDefaults objectForKey:key];
+	
+	return val;
+}
+
 - (void)connect;
 {
   NSString *hostname = [_host text];
@@ -74,6 +115,9 @@
                                          otherButtonTitles:nil, nil] autorelease];
     [alert show];
   }
+  
+  [self saveToUserDefaults:hostname forKey:@"host"];
+  [self saveToUserDefaults:port forKey:@"port"];
   
   BuildsController *builds_controller = [[[BuildsController alloc] initWithStyle:UITableViewStyleGrouped address:[NSString stringWithFormat:@"%@:%@/api/json",hostname,port]] autorelease];
   

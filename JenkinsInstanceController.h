@@ -18,5 +18,7 @@
 @property (nonatomic, retain) UITextField *port;
 
 - (void)connect;
+-(NSString*)retrieveFromUserDefaults:(NSString *)key;
+-(void)saveToUserDefaults:(NSString*)data forKey:(NSString *)key;
 
 @end

@@ -129,10 +129,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  // Return the number of rows in the section.
-//  NSLog(@"-->%@", [[self builds] count]);
   return [[self builds] count];
-  //return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,6 +146,7 @@
   
   Build *build = [[self builds] objectAtIndex:[indexPath row]];
   [[cell textLabel] setText:[build name]];
+  NSLog(@"--->%@", [build currentState]);
   [[cell textLabel] setTextColor:[build currentState]];
   
   return cell;

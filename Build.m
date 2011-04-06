@@ -24,11 +24,11 @@
   
   NSString *color = [dictionary objectForKey:@"color"];
   
-  if (color == @"red") {
+  if ([color isEqualToString:@"red"]) {
     [build setCurrentState:[UIColor redColor]];
   }
-  else if(color == @"blue") {
-    [build setCurrentState:[UIColor greenColor]];
+  else if([color isEqualToString:@"blue"]) {
+    [build setCurrentState:[UIColor colorWithHex:0x006633]];
   }
   else {
     [build setCurrentState:[UIColor blueColor]];

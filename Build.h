@@ -17,7 +17,7 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) UIColor *currentState;
+@property (nonatomic, retain) UIColor *currentState;
 
 + (id)buildFromDictionary:(NSDictionary *)dictionary;
 //- (UIColor *)color;
