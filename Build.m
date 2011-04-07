@@ -54,7 +54,9 @@
 
 @synthesize name = name_;
 @synthesize url = url_;
+@synthesize description = description_;
 @synthesize currentState = currentState_;
+@synthesize lastBuildURL = lastBuildURL_;
 
 - (void)setBroken:(BOOL)yesOrNo;
 {
@@ -65,27 +67,5 @@
 {
   return broken;
 }
-
-
-
-//- (UIColor *)color;
-//{
-//  UIColor *color;
-//  
-//  NSDictionary *colors = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithHex:0x2E8B57 ], @"success",
-//                          [UIColor redColor], @"failure",
-//                          [UIColor blueColor], @"building",
-//                          nil];
-//  if ([[self activity] isEqualToString:@"building"])
-//  {
-//    color = [UIColor blueColor];
-//  }
-//  else 
-//  {
-//    color = [colors objectForKey:[self lastBuildStatus]];
-//  }
-//  
-//  return color;
-//}
 
 @end

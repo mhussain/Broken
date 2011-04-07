@@ -13,13 +13,17 @@
   NSString *name_;
   NSString *url_;
   UIColor *currentState_;
+	NSString *description_;
+  NSString *lastBuildURL_;
+  
   BOOL broken;
 }
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, retain) UIColor *currentState;
-//@property (nonatomic, copy) BOOL *broken;
+@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *lastBuildURL;
 
 + (id)buildFromDictionary:(NSDictionary *)dictionary;
 - (void)setBroken:(BOOL)yesOrNo;

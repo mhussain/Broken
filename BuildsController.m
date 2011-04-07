@@ -209,13 +209,16 @@
                                            otherButtonTitles:nil, nil] autorelease];
     [alert show]; 
   }
+  else
+  {
+    
+    BrokenBuildController *brokenBuildController = [[[BrokenBuildController alloc] initWithNibName:nil 
+                                                                                            bundle:nil 
+                                                                                       brokenBuild:build] autorelease];
+    
+    [[self navigationController] pushViewController:brokenBuildController animated:YES];
   
-  BrokenBuildController *brokenBuildController = [[[BrokenBuildController alloc] initWithNibName:nil 
-                                                                                          bundle:nil 
-                                                                                     brokenBuild:build] autorelease];
-  
-  [[self navigationController] pushViewController:brokenBuildController animated:YES];
-  
+  }
 }
 
 @end

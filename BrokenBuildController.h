@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Build.h"
+#import "ASIHTTPRequest.h"
+#import "UIColor+Hex.h"
 
 @interface BrokenBuildController : UIViewController 
 {
-    
+  Build *_build;   
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil brokenBuild:(Build *)build;
+@property (nonatomic, retain) Build *build;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil brokenBuild:(Build *)build;
+- (void)getBuildDataFromRequest:(ASIHTTPRequest *)request;
 @end
