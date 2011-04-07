@@ -123,7 +123,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
@@ -150,11 +149,7 @@
   
   if ([build isBroken])
   {
-    [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-  }
-  else
-  {
-    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
   }
   
   return cell;
@@ -203,6 +198,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  Build *build = [[self builds] objectAtIndex:[indexPath row]];
+  
+  if ([build isBroken]) {
+  }
+  else {
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Stable build" 
+                                                     message:@"Why do you care? Its green isn't it?" 
+                                                    delegate:nil 
+                                           cancelButtonTitle:@"Whatever!" 
+                                           otherButtonTitles:nil, nil] autorelease];
+    [alert show]; 
+  }
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
