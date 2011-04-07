@@ -5,3 +5,13 @@ status.
 
 
 Cheers to http://github.com/icaruswings for the idea and help.
+
+Instructions:
+
+1. git clone git://github.com/mhussain/Broken.git
+2. cd Broken
+3. git submodule init
+4. git submodule update
+5. open Broken.xcodeproj
+6. Build  -> [Command b]
+7. Run -> [Command r]
