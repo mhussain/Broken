@@ -36,6 +36,7 @@
 		213BCAA5134D18BD00F74194 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA4134D18BD00F74194 /* UIColor+Hex.m */; };
 		213BCAA9134D19B800F74194 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA8134D19B800F74194 /* Build.m */; };
 		213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAAB134D19ED00F74194 /* NSArray+Build.m */; };
+		213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAB6134D4A6200F74194 /* BrokenBuildController.m */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -121,6 +122,8 @@
 		213BCAA8134D19B800F74194 /* Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Build.m; sourceTree = "<group>"; };
 		213BCAAA134D19ED00F74194 /* NSArray+Build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Build.h"; sourceTree = "<group>"; };
 		213BCAAB134D19ED00F74194 /* NSArray+Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Build.m"; sourceTree = "<group>"; };
+		213BCAB5134D4A6200F74194 /* BrokenBuildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenBuildController.h; sourceTree = "<group>"; };
+		213BCAB6134D4A6200F74194 /* BrokenBuildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenBuildController.m; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -348,6 +351,8 @@
 				21DAEF06134C4A890077FDE8 /* JenkinsInstanceController.m */,
 				213BCA92134D15E300F74194 /* BuildsController.h */,
 				213BCA93134D15E300F74194 /* BuildsController.m */,
+				213BCAB5134D4A6200F74194 /* BrokenBuildController.h */,
+				213BCAB6134D4A6200F74194 /* BrokenBuildController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				213BCAA5134D18BD00F74194 /* UIColor+Hex.m in Sources */,
 				213BCAA9134D19B800F74194 /* Build.m in Sources */,
 				213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */,
+				213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

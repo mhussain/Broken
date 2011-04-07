@@ -7,6 +7,7 @@
 //
 
 #import "BuildsController.h"
+#import "BrokenBuildController.h"
 
 @implementation BuildsController
 
@@ -200,9 +201,7 @@
 {
   Build *build = [[self builds] objectAtIndex:[indexPath row]];
   
-  if ([build isBroken]) {
-  }
-  else {
+  if (![build isBroken]) {
     UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Stable build" 
                                                      message:@"Why do you care? Its green isn't it?" 
                                                     delegate:nil 
@@ -210,14 +209,13 @@
                                            otherButtonTitles:nil, nil] autorelease];
     [alert show]; 
   }
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+  
+  BrokenBuildController *brokenBuildController = [[[BrokenBuildController alloc] initWithNibName:nil 
+                                                                                          bundle:nil 
+                                                                                     brokenBuild:build] autorelease];
+  
+  [[self navigationController] pushViewController:brokenBuildController animated:YES];
+  
 }
 
 @end
