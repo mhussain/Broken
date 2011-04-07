@@ -39,8 +39,8 @@
       
       UIView *build_view = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
       
-			//UILabel *description = [[[UILabel alloc] initWithFrame:CGRectMake(10., 10., 200., 30.)] autorelease];
       UITextView *description = [[[UITextView alloc] initWithFrame:CGRectMake(10., 10., 300., 80.)] autorelease];
+      
       [description setTextAlignment:UITextAlignmentLeft];
       [description setUserInteractionEnabled:NO];
       [description setFont:[UIFont systemFontOfSize:16.]];
@@ -49,10 +49,36 @@
       [description setText:[_build description]];
   
       [build_view addSubview:description];
-      [build_view setBackgroundColor:[UIColor colorWithHex:0xCDC9C9]];
+      //[build_view setBackgroundColor:[UIColor colorWithHex:0xCDC9C9]];
+      [build_view setBackgroundColor:[UIColor clearColor]];
+      
+      UILabel *commit_id = [[[UILabel alloc] initWithFrame:CGRectMake(10., 100., 300., 30.)] autorelease];
+      [commit_id setText:[@" ID: " stringByAppendingString:[_build commitID]]];
+      [commit_id setFont:[UIFont systemFontOfSize:12.]];
+      [commit_id setBackgroundColor:[UIColor colorWithHex:0xEEE9E9]];
+
+      UILabel *culprit = [[[UILabel alloc] initWithFrame:CGRectMake(10., 140, 300., 30.)] autorelease];
+      [culprit setText:[@" Who: " stringByAppendingString:[_build culprit]]];
+      [culprit setFont:[UIFont systemFontOfSize:12.]];
+      [culprit setBackgroundColor:[UIColor colorWithHex:0xEEE9E9]];
+
+      UILabel *comment = [[[UILabel alloc] initWithFrame:CGRectMake(10., 190, 300., 30.)] autorelease];
+      [comment setText:[@" Why: " stringByAppendingString:[_build comment]]];
+      [comment setFont:[UIFont systemFontOfSize:12.]];
+      [comment setBackgroundColor:[UIColor colorWithHex:0xEEE9E9]];
+
+      UILabel *brokenWhen = [[[UILabel alloc] initWithFrame:CGRectMake(10., 240, 300., 30.)] autorelease];
+      [brokenWhen setText:[@" When: " stringByAppendingString:[_build brokenWhen]]];
+      [brokenWhen setFont:[UIFont systemFontOfSize:12.]];
+      [brokenWhen setBackgroundColor:[UIColor colorWithHex:0xEEE9E9]];
+
+      [build_view addSubview:commit_id];
+      [build_view addSubview:culprit];
+      [build_view addSubview:comment];
+      [build_view addSubview:brokenWhen];
+
       
       [self setView:build_view];
-
     }
   
     return self;
@@ -80,6 +106,46 @@
   NSDictionary *build_data = [parser objectWithString:json_string error:nil];
 	[_build setDescription:[build_data objectForKey:@"description"]];
   [_build setLastBuildURL:[[build_data objectForKey:@"lastBuild"] objectForKey:@"url"]];
+ 
+  
+  NSString *last_build_url = [[_build lastBuildURL] stringByAppendingString:@"/api/json"];
+  //NSString *last_build_url = [NSString stringWithString:@"http://ci.dev.int.realestate.com.au:8080/job/accpac/21/api/json"];
+  
+  ASIHTTPRequest *local_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:last_build_url]];
+  
+  [local_request startSynchronous];
+  
+  if (![local_request error]) 
+  { 
+    [self getLastBuildDataFromResult:local_request];
+  }
+  
+
+}
+
+- (void)getLastBuildDataFromResult:(ASIHTTPRequest *)request;
+{
+  NSString *json_string = [request responseString];
+  SBJsonParser *parser = [[[SBJsonParser alloc] init] autorelease];
+  
+  NSDictionary *build_data = [parser objectWithString:json_string error:nil];
+
+  NSDictionary *changeSet = [build_data objectForKey:@"changeSet"];
+  NSArray *items = [changeSet objectForKey:@"items"];
+  
+  if ([items count] == 0) 
+  {
+    return ;
+  }
+  
+  NSDictionary *first_item = [items objectAtIndex:0];
+  
+  NSString *full_name = [[first_item objectForKey:@"author"] objectForKey:@"fullName"];
+
+  [_build setCommitID:[first_item objectForKey:@"id"]];
+  [_build setBrokenWhen:[first_item objectForKey:@"date"]];
+  [_build setComment:[first_item objectForKey:@"comment"]];
+  [_build setCulprit:full_name];
 }
 
 - (void)dealloc

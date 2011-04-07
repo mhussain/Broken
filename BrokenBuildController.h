@@ -20,4 +20,5 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil brokenBuild:(Build *)build;
 - (void)getBuildDataFromRequest:(ASIHTTPRequest *)request;
+- (void)getLastBuildDataFromResult:(ASIHTTPRequest *)request;
 @end

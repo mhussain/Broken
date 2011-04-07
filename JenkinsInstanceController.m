@@ -126,7 +126,7 @@
                                                                                   target:nil 
                                                                                   action:nil] autorelease]];
   
-  [[self navigationController] pushViewController:builds_controller animated:NO];
+  [[self navigationController] pushViewController:builds_controller animated:YES];
   
   
 }

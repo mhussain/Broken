@@ -22,6 +22,10 @@
   [build setUrl:[dictionary objectForKey:@"url"]];
   [build setCurrentState:[UIColor grayColor]];
   [build setBroken:NO];
+  [build setBrokenWhen:@"Unknown"];
+  [build setCommitID:@"Unknown"];
+  [build setComment:@"No Comment"];
+  [build setCulprit:@"Unknown"];
   
   NSString *color = [dictionary objectForKey:@"color"];
   
@@ -57,6 +61,10 @@
 @synthesize description = description_;
 @synthesize currentState = currentState_;
 @synthesize lastBuildURL = lastBuildURL_;
+@synthesize culprit = culprit_;
+@synthesize comment = comment_;
+@synthesize commitID = commitID_;
+@synthesize brokenWhen = brokenWhen_;
 
 - (void)setBroken:(BOOL)yesOrNo;
 {
