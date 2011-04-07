@@ -152,6 +152,10 @@
   {
     [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
   }
+  else
+  {
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+  }
   
   return cell;
 }

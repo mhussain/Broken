@@ -121,7 +121,7 @@
   
   BuildsController *builds_controller = [[[BuildsController alloc] initWithStyle:UITableViewStyleGrouped address:[NSString stringWithFormat:@"%@:%@/api/json",hostname,port]] autorelease];
   
-	[[ self navigationItem ] setBackBarButtonItem: [[[UIBarButtonItem alloc] initWithTitle:@"Connect" 
+	[[ self navigationItem ] setBackBarButtonItem: [[[UIBarButtonItem alloc] initWithTitle:@"Settings" 
                                                                                    style:UIBarButtonItemStyleBordered 
                                                                                   target:nil 
                                                                                   action:nil] autorelease]];
