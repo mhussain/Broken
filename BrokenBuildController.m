@@ -23,14 +23,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   
-    if (self) {
+    if (self) 
+    {
       _build = [build retain];
       [self setTitle:[_build name]];
       
       NSString *url = [[build url] stringByAppendingString:@"/api/json"];
       
       ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-      //[request setDelegate:self];
       [request startSynchronous];
       
       if (![request error]) {
@@ -49,7 +49,6 @@
       [description setText:[_build description]];
   
       [build_view addSubview:description];
-      //[build_view setBackgroundColor:[UIColor colorWithHex:0xCDC9C9]];
       [build_view setBackgroundColor:[UIColor clearColor]];
       
       UILabel *commit_id = [[[UILabel alloc] initWithFrame:CGRectMake(10., 100., 300., 30.)] autorelease];

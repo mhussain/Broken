@@ -6,6 +6,7 @@
 //
 
 #import "BrokenAppDelegate.h"
+#import "BuildsController.h"
 
 @implementation BrokenAppDelegate
 
@@ -22,19 +23,18 @@
   
   _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
   
-   
-  //NSString *host = [_navigationController retrieveFromUserDefaults:@"host"];
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   
-//  if (host)
-//  {
-//    builds_controller = [[BuildsController alloc] initWithNibName:nil bundle:nil];
-//    [_navigationController pushViewController:builds_controller animated:YES];
-//  }
-//  else
-//  {
+  if ([defaults objectForKey:@"host"]) 
+  {
+		builds_controller = [[BuildsController alloc] initWithStyle:UITableViewStyleGrouped defaults:defaults];
+    [_navigationController pushViewController:builds_controller animated:YES];
+  }
+  else 
+  {
     jenkins_instance_controller = [[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil];
     [_navigationController pushViewController:jenkins_instance_controller animated:YES];
-  //}
+  }
   
   [_window setRootViewController:_navigationController];
 

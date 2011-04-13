@@ -24,7 +24,6 @@
     [self setTitle:@"Broken?"];
     
     UIView *add_host = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
-    
     UILabel *host_label = [[[UILabel alloc] initWithFrame:CGRectMake(10., 10., 170., 30.)] autorelease];
     [host_label setText:@"Hostname"];
     
@@ -121,12 +120,8 @@
   [self saveToUserDefaults:hostname forKey:@"host"];
   [self saveToUserDefaults:port forKey:@"port"];
   
-  BuildsController *builds_controller = [[[BuildsController alloc] initWithStyle:UITableViewStyleGrouped address:[NSString stringWithFormat:@"%@:%@/api/json",hostname,port]] autorelease];
-  
-	[[ self navigationItem ] setBackBarButtonItem: [[[UIBarButtonItem alloc] initWithTitle:@"Settings" 
-                                                                                   style:UIBarButtonItemStyleBordered 
-                                                                                  target:nil 
-                                                                                  action:nil] autorelease]];
+  BuildsController *builds_controller = [[[BuildsController alloc] initWithStyle:UITableViewStyleGrouped 
+                                                                         address:[NSString stringWithFormat:@"%@:%@/api/json",hostname,port]] autorelease];
   
   [[self navigationController] pushViewController:builds_controller animated:YES];
   
@@ -157,13 +152,14 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [[self navigationItem] setHidesBackButton:YES];
 }
-*/
+
 
 - (void)viewDidUnload
 {

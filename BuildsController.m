@@ -8,6 +8,7 @@
 
 #import "BuildsController.h"
 #import "BrokenBuildController.h"
+#import "JenkinsInstanceController.h"
 
 @implementation BuildsController
 
@@ -16,6 +17,15 @@
 -(id)initWithStyle:(UITableViewStyle)style;
 {
   return [self initWithStyle:style address:nil];
+}
+
+- (id) initWithStyle:(UITableViewStyle)style defaults:(NSUserDefaults *)defaults;
+{
+  NSString *host = [defaults objectForKey:@"host"];
+  NSString *port = [defaults objectForKey:@"port"];
+  
+  NSString *address = [NSString stringWithFormat:@"%@:%@/api/json", host, port];
+  return [self initWithStyle:style address:address];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style address:(NSString *)address;
@@ -27,10 +37,11 @@
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
                                                    initWithTitle:@"Settings" 
                                                    style:UIButtonTypeRoundedRect
-                                                   target:nil 
-                                                   action:nil] autorelease] animated:YES];
+                                                   target:self 
+                                                   action:@selector(settings)] autorelease] animated:YES];
     
     [self setTitle:@"Builds"];
+    [[self navigationController] setNavigationBarHidden:YES];
 		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];
     [request startAsynchronous];
@@ -38,6 +49,13 @@
   }
   
   return self;
+}
+
+- (void)settings;
+{
+  NSLog(@"I am here");
+  JenkinsInstanceController *settings = [[[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil] autorelease];
+  [[self navigationController] pushViewController:settings animated:YES];
 }
 
 #pragma mark -
@@ -86,6 +104,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [[self navigationItem] setHidesBackButton:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
