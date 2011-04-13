@@ -124,7 +124,11 @@
   BuildsController *builds_controller = [[[BuildsController alloc] initWithStyle:UITableViewStyleGrouped 
                                                                          address:[NSString stringWithFormat:@"%@:%@/api/json",hostname,port]] autorelease];
   
+  //[self navigationItem] a
   [[self navigationController] pushViewController:builds_controller animated:YES];
+  
+  //UINavigationController *temp = [[[UINavigationController alloc] initWithNibName:nil bundle:nil] autorelease];
+  //[self presentModalViewController:builds_controller animated:YES]; 
   
 }
 

@@ -103,6 +103,12 @@
 
 - (void)viewDidLoad
 {
+  [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
+                                                 initWithTitle:@"Settings" 
+                                                 style:UIButtonTypeRoundedRect
+                                                 target:self 
+                                                 action:@selector(settings)] autorelease] animated:YES];
+  
     [super viewDidLoad];
   [[self navigationItem] setHidesBackButton:YES];
 
