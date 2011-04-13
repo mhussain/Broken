@@ -4,3 +4,6 @@
 [submodule "lib/json-framework"]
 	path = lib/json-framework
 	url = https://github.com/stig/json-framework.git
+[submodule "lib/IBAForms"]
+	path = lib/IBAForms
+	url = https://github.com/ittybittydude/IBAForms.git
