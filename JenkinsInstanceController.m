@@ -76,6 +76,7 @@
     [add_host addSubview:connect];
     
     [self setView:add_host];
+    [[self navigationItem] setHidesBackButton:YES];
   }
   
   return self;

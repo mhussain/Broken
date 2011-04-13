@@ -88,6 +88,7 @@
 {
 	[jenkins_instance_controller release];
   [_window release];
+  [builds_controller release];
   [_navigationController release];
   [super dealloc];
 }
