@@ -11,6 +11,7 @@
 
 @interface BrokenAppDelegate : NSObject <UIApplicationDelegate> {
 	JenkinsInstanceController *jenkins_instance_controller;
+  BuildsController *builds_controller;
 }
 
 @property (nonatomic, retain) UIWindow *window;

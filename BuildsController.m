@@ -23,6 +23,13 @@
   self = [super initWithStyle:style];
    
   if (self) {
+    
+    [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
+                                                   initWithTitle:@"Settings" 
+                                                   style:UIButtonTypeRoundedRect
+                                                   target:nil 
+                                                   action:nil] autorelease] animated:YES];
+    
     [self setTitle:@"Builds"];
 		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];

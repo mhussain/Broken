@@ -8,6 +8,7 @@
 
 #import "JenkinsInstanceController.h"
 #import "JSON.h"
+#import "UIColor+Hex.h"
 
 @implementation JenkinsInstanceController
 
@@ -48,7 +49,6 @@
     [_port setBorderStyle:UITextBorderStyleBezel];
     [_port setAutocorrectionType:UITextAutocorrectionTypeNo]; 
     [_port setKeyboardType:UIKeyboardTypeNumberPad];
-    //[_port setPlaceholder:@"8080"];
 
     NSString *port = [self retrieveFromUserDefaults:@"port"];    
     if (port) 
@@ -59,13 +59,15 @@
     {
       [_port setPlaceholder:@"8080"];
     }
-
     
-    UIButton *connect = [[[UIButton alloc] initWithFrame:CGRectMake(30., 100., 250., 30.)] autorelease];
-    [connect setBackgroundColor:[UIColor redColor]];
+    UIButton *connect = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [connect setFrame:CGRectMake(30., 100., 250., 30.)];
+    [[connect imageView] setExclusiveTouch:YES];
+    
+    [connect setBackgroundColor:[UIColor colorWithHex:0x5190ED]];
+
     [connect setClipsToBounds:YES];
     [connect setTitle:@"Connect to Jenkins" forState:UIControlStateNormal];
-    
     [connect addTarget:self action:@selector(connect) forControlEvents:UIControlEventTouchUpInside];
     
     [add_host addSubview:host_label];    
@@ -127,7 +129,6 @@
                                                                                   action:nil] autorelease]];
   
   [[self navigationController] pushViewController:builds_controller animated:YES];
-  
   
 }
 

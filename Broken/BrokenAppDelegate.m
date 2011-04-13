@@ -22,8 +22,19 @@
   
   _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
   
-  jenkins_instance_controller = [[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil];   
-  [_navigationController pushViewController:jenkins_instance_controller animated:NO];
+   
+  //NSString *host = [_navigationController retrieveFromUserDefaults:@"host"];
+  
+//  if (host)
+//  {
+//    builds_controller = [[BuildsController alloc] initWithNibName:nil bundle:nil];
+//    [_navigationController pushViewController:builds_controller animated:YES];
+//  }
+//  else
+//  {
+    jenkins_instance_controller = [[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil];
+    [_navigationController pushViewController:jenkins_instance_controller animated:YES];
+  //}
   
   [_window setRootViewController:_navigationController];
 
