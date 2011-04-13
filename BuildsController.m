@@ -40,9 +40,17 @@
                                                    target:self 
                                                    action:@selector(settings)] autorelease] animated:YES];
     
+    [[self navigationItem] setLeftBarButtonItem:[[[UIBarButtonItem alloc] 
+                                                   initWithTitle:@"Refresh" 
+                                                   style:UIButtonTypeRoundedRect
+                                                   target:self 
+                                                   action:@selector(refresh)] autorelease] animated:YES];
+    
+    
     [self setTitle:@"Builds"];
     [[self navigationController] setNavigationBarHidden:YES];
-		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];
     [request startAsynchronous];
 
@@ -51,9 +59,21 @@
   return self;
 }
 
+- (void)refresh;
+{
+  NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+  NSString *address = [NSString stringWithFormat:@"%@:%@/api/json",
+                        [settings objectForKey:@"host"],
+                        [settings objectForKey:@"port"]];
+  
+  ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
+  [request setDelegate:self];
+  [request startAsynchronous];
+  NSLog(@"%@", address);
+}
+
 - (void)settings;
 {
-  NSLog(@"I am here");
   JenkinsInstanceController *settings = [[[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil] autorelease];
   [[self navigationController] pushViewController:settings animated:YES];
 }

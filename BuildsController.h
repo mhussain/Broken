@@ -21,6 +21,9 @@
 
 - (id)initWithStyle:(UITableViewStyle)style address:(NSString *)address;
 - (id)initWithStyle:(UITableViewStyle)style defaults:(NSUserDefaults *)defaults;
+- (void)refresh;
+- (void)settings;
+
 @property (nonatomic, copy) NSArray *builds;
 
 @end

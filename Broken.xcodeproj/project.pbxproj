@@ -37,6 +37,7 @@
 		213BCAA9134D19B800F74194 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA8134D19B800F74194 /* Build.m */; };
 		213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAAB134D19ED00F74194 /* NSArray+Build.m */; };
 		213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAB6134D4A6200F74194 /* BrokenBuildController.m */; };
+		2174A95013565A2C003869B2 /* blueButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2174A94F13565A2C003869B2 /* blueButtonBg.png */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -124,6 +125,7 @@
 		213BCAAB134D19ED00F74194 /* NSArray+Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Build.m"; sourceTree = "<group>"; };
 		213BCAB5134D4A6200F74194 /* BrokenBuildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenBuildController.h; sourceTree = "<group>"; };
 		213BCAB6134D4A6200F74194 /* BrokenBuildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenBuildController.m; sourceTree = "<group>"; };
+		2174A94F13565A2C003869B2 /* blueButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonBg.png; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -266,6 +268,7 @@
 		213BCAB8134D5A3B00F74194 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2174A94F13565A2C003869B2 /* blueButtonBg.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D278C2134BF0BB0063DB03 /* InfoPlist.strings in Resources */,
+				2174A95013565A2C003869B2 /* blueButtonBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

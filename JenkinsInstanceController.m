@@ -63,7 +63,8 @@
     [connect setFrame:CGRectMake(30., 100., 250., 30.)];
     [[connect imageView] setExclusiveTouch:YES];
     
-    [connect setBackgroundColor:[UIColor colorWithHex:0x5190ED]];
+    //[connect setBackgroundColor:[UIColor colorWithHex:0x5190ED]];
+    [connect setBackgroundImage:[UIImage imageNamed:@"blueButtonBg.png"] forState:UIControlStateNormal];
 
     [connect setClipsToBounds:YES];
     [connect setTitle:@"Connect to Jenkins" forState:UIControlStateNormal];
