@@ -38,6 +38,7 @@
 		213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAAB134D19ED00F74194 /* NSArray+Build.m */; };
 		213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAB6134D4A6200F74194 /* BrokenBuildController.m */; };
 		2174A95013565A2C003869B2 /* blueButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2174A94F13565A2C003869B2 /* blueButtonBg.png */; };
+		2174AA0713567045003869B2 /* libIBAForms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2174AA0613567045003869B2 /* libIBAForms.a */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -55,6 +56,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2174AA041356703C003869B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = IBAForms;
+		};
 		21D278DB134BF0BB0063DB03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 21D278AA134BF0BB0063DB03 /* Project object */;
@@ -126,6 +134,8 @@
 		213BCAB5134D4A6200F74194 /* BrokenBuildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenBuildController.h; sourceTree = "<group>"; };
 		213BCAB6134D4A6200F74194 /* BrokenBuildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenBuildController.m; sourceTree = "<group>"; };
 		2174A94F13565A2C003869B2 /* blueButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonBg.png; sourceTree = "<group>"; };
+		2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = lib/IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
+		2174AA0613567045003869B2 /* libIBAForms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIBAForms.a; sourceTree = SOURCE_ROOT; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2174AA0713567045003869B2 /* libIBAForms.a in Frameworks */,
 				210B695D134C685A00C210B9 /* libz.1.1.3.dylib in Frameworks */,
 				210B695B134C680100C210B9 /* libz.1.2.3.dylib in Frameworks */,
 				210B6957134C67C500C210B9 /* CFNetwork.framework in Frameworks */,
@@ -273,6 +284,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		2174A9FE1356703C003869B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2174AA051356703C003869B2 /* libIBAForms.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		21D278A8134BF0BB0063DB03 = {
 			isa = PBXGroup;
 			children = (
@@ -300,8 +319,10 @@
 		21D278B6134BF0BB0063DB03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2174AA0613567045003869B2 /* libIBAForms.a */,
 				210B695C134C685A00C210B9 /* libz.1.1.3.dylib */,
 				210B695A134C680100C210B9 /* libz.1.2.3.dylib */,
+				2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */,
 				210B6953134C67C400C210B9 /* CFNetwork.framework */,
 				210B6955134C67C400C210B9 /* MobileCoreServices.framework */,
 				210B6956134C67C400C210B9 /* SystemConfiguration.framework */,
@@ -425,6 +446,12 @@
 			mainGroup = 21D278A8134BF0BB0063DB03;
 			productRefGroup = 21D278B4134BF0BB0063DB03 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2174A9FE1356703C003869B2 /* Products */;
+					ProjectRef = 2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				21D278B2134BF0BB0063DB03 /* Broken */,
@@ -432,6 +459,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2174AA051356703C003869B2 /* libIBAForms.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libIBAForms.a;
+			remoteRef = 2174AA041356703C003869B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		21D278B1134BF0BB0063DB03 /* Resources */ = {
@@ -589,8 +626,14 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Broken/Broken-Prefix.pch";
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"$(SRCROOT)/Third Party/ibaforms/library/build/headers\"",
+				);
 				INFOPLIST_FILE = "Broken/Broken-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
@@ -610,6 +653,10 @@
 				GCC_PREFIX_HEADER = "Broken/Broken-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = "Broken/Broken-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				VALIDATE_PRODUCT = YES;
