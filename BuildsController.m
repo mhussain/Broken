@@ -9,6 +9,7 @@
 #import "BuildsController.h"
 #import "BrokenBuildController.h"
 #import "JenkinsInstanceController.h"
+#import <IBAForms/IBAForms.h>
 
 @implementation BuildsController
 
@@ -33,7 +34,7 @@
   self = [super initWithStyle:style];
    
   if (self) {
-    
+
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
                                                    initWithTitle:@"Settings" 
                                                    style:UIButtonTypeRoundedRect
@@ -46,7 +47,7 @@
                                                    target:self 
                                                    action:@selector(refresh)] autorelease] animated:YES];
     
-    
+  
     [self setTitle:@"Builds"];
     [[self navigationController] setNavigationBarHidden:YES];
     
@@ -69,7 +70,6 @@
   ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
   [request setDelegate:self];
   [request startAsynchronous];
-  NSLog(@"%@", address);
 }
 
 - (void)settings;

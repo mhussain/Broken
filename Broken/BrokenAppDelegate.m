@@ -7,6 +7,8 @@
 
 #import "BrokenAppDelegate.h"
 #import "BuildsController.h"
+#import "Connection.h"
+#import "ConnectionController.h"
 
 @implementation BrokenAppDelegate
 
@@ -23,6 +25,12 @@
   
   _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
   
+  NSMutableDictionary *form = [[[NSMutableDictionary alloc] init] autorelease];
+  
+	// Values set on the model will be reflected in the form fields.
+	[form setObject:@"A value contained in the model" forKey:@"readOnlyText"];
+
+    
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   
   if ([defaults objectForKey:@"host"]) 

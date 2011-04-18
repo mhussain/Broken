@@ -16,9 +16,12 @@
   Build *_build;   
 }
 
+static const NSString *kDefaultInfo = @"This build was pushed by the server. No commit data to report";
+
 @property (nonatomic, retain) Build *build;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil brokenBuild:(Build *)build;
-- (void)getBuildDataFromRequest:(ASIHTTPRequest *)request;
+- (void)getBuildDataFromRequest	:(ASIHTTPRequest *)request;
 - (void)getLastBuildDataFromResult:(ASIHTTPRequest *)request;
+- (void) styleLabel:(UILabel *)label;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <IBAForms/IBAInputManager.h>
 
 @interface Build : NSObject 
 {
@@ -20,7 +21,9 @@
   NSString *brokenWhen_;
   NSString *commitID_;
   
+  BOOL defaultPush;
   BOOL broken;
+
 }
 
 @property (nonatomic, copy) NSString *name;
@@ -36,5 +39,7 @@
 + (id)buildFromDictionary:(NSDictionary *)dictionary;
 - (void)setBroken:(BOOL)yesOrNo;
 - (BOOL)isBroken;
+- (BOOL)wasDefaultPush;
+- (void)setDefaultPush:(BOOL)yesOrNo;
 
 @end

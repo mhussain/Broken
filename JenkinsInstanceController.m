@@ -30,8 +30,8 @@
     UILabel *port_label = [[[UILabel alloc] initWithFrame:CGRectMake(10., 50., 170., 30.)] autorelease];
     [port_label setText:@"Port"];
     
-    _host = [[UITextField alloc] initWithFrame:CGRectMake(140., 10., 170., 30.)];
-    [_host setBorderStyle:UITextBorderStyleBezel];
+    _host = [[UITextField alloc] initWithFrame:CGRectMake(100., 10., 200., 30.)];
+    [_host setBorderStyle:UITextBorderStyleRoundedRect];
     [_host setAutocorrectionType:UITextAutocorrectionTypeNo];
     
     NSString *hostname = [self retrieveFromUserDefaults:@"host"];
@@ -44,8 +44,8 @@
       [_host setPlaceholder:@"http://...."];
     }
    
-    _port = [[UITextField alloc] initWithFrame:CGRectMake(140., 50., 170., 30.)];
-    [_port setBorderStyle:UITextBorderStyleBezel];
+    _port = [[UITextField alloc] initWithFrame:CGRectMake(100., 50., 200., 30.)];
+    [_port setBorderStyle:UITextBorderStyleRoundedRect];
     [_port setAutocorrectionType:UITextAutocorrectionTypeNo]; 
     [_port setKeyboardType:UIKeyboardTypeNumberPad];
 
@@ -59,21 +59,22 @@
       [_port setPlaceholder:@"8080"];
     }
     
-    UIButton *connect = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+   UIButton *connect = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+
     [connect setFrame:CGRectMake(30., 100., 250., 30.)];
     [[connect imageView] setExclusiveTouch:YES];
+    [connect setShowsTouchWhenHighlighted:YES];
     
-    //[connect setBackgroundColor:[UIColor colorWithHex:0x5190ED]];
-    [connect setBackgroundImage:[UIImage imageNamed:@"blueButtonBg.png"] forState:UIControlStateNormal];
-
-    [connect setClipsToBounds:YES];
     [connect setTitle:@"Connect to Jenkins" forState:UIControlStateNormal];
+    [connect setTitle:@"Connecting ..." forState:UIControlStateSelected];
     [connect addTarget:self action:@selector(connect) forControlEvents:UIControlEventTouchUpInside];
     
     [add_host addSubview:host_label];    
     [add_host addSubview:_host];
+    
     [add_host addSubview:port_label];
     [add_host addSubview:_port];
+    
     [add_host addSubview:connect];
     
     [self setView:add_host];

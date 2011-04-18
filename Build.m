@@ -13,7 +13,6 @@
 
 @implementation Build
 
-
 + (id)buildFromDictionary:(NSDictionary *)dictionary;
 {
   Build *build = [[[Build alloc] init] autorelease];
@@ -26,6 +25,7 @@
   [build setCommitID:@"Unknown"];
   [build setComment:@"No Comment"];
   [build setCulprit:@"Unknown"];
+  [build setDefaultPush:NO];
   
   NSString *color = [dictionary objectForKey:@"color"];
   
@@ -76,4 +76,13 @@
   return broken;
 }
 
+- (BOOL)wasDefaultPush;
+{
+  return defaultPush;
+}
+
+- (void)setDefaultPush:(BOOL)yesOrNo;
+{
+  defaultPush = yesOrNo;
+}
 @end
