@@ -8,7 +8,6 @@
 
 #import "NSString+Utilities.h"
 
-
 @implementation NSString (Utilities)
 
 - (BOOL)isEmpty;
