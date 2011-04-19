@@ -51,6 +51,15 @@
     [self setTitle:@"Builds"];
     [[self navigationController] setNavigationBarHidden:YES];
     
+    UISearchBar *search = [[[UISearchBar alloc] initWithFrame:CGRectMake(2., 5., 12., 15.)] autorelease];
+    
+    //[search setDelegate:self];
+    [search setPlaceholder:@"Search for a build"];
+    [search setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [search sizeToFit];
+    
+    [[self tableView] setTableHeaderView:search]; 
+    
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];
     [request startAsynchronous];
