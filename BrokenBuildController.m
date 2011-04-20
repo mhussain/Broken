@@ -95,6 +95,23 @@ NSInteger labelBorderColor = 0x556B2F;
     return self;
 }
 
+#pragma	mark -
+#pragma mark Search
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar;
+{
+  [searchBar setShowsScopeBar:YES];
+  [searchBar setShowsCancelButton:YES animated:YES];
+  return YES;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;
+{
+  [searchBar setShowsScopeBar:NO];
+  [searchBar setShowsCancelButton:NO animated:YES];
+  return YES;
+}
+
 #pragma mark -
 #pragma mark StyleLabel
 - (void) styleLabel:(UILabel *)label;
