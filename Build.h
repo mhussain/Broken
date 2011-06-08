@@ -23,6 +23,7 @@
   
   BOOL defaultPush;
   BOOL broken;
+  BOOL stable;
 
 }
 
@@ -37,8 +38,12 @@
 @property (nonatomic, copy) NSString *brokenWhen;
 
 + (id)buildFromDictionary:(NSDictionary *)dictionary;
+
 - (void)setBroken:(BOOL)yesOrNo;
 - (BOOL)isBroken;
+
+- (BOOL)isStable;
+
 - (BOOL)wasDefaultPush;
 - (void)setDefaultPush:(BOOL)yesOrNo;
 

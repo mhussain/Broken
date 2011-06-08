@@ -38,10 +38,10 @@
 		213BCAA9134D19B800F74194 /* Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAA8134D19B800F74194 /* Build.m */; };
 		213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAAB134D19ED00F74194 /* NSArray+Build.m */; };
 		213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCAB6134D4A6200F74194 /* BrokenBuildController.m */; };
+		213C4380139F7A6100CB3748 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213C437F139F7A6100CB3748 /* OverlayView.m */; };
 		2174A95013565A2C003869B2 /* blueButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2174A94F13565A2C003869B2 /* blueButtonBg.png */; };
 		2174AA0713567045003869B2 /* libIBAForms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2174AA0613567045003869B2 /* libIBAForms.a */; };
 		2199CFD31358622800A2202B /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2199CFD21358622800A2202B /* Connection.m */; };
-		2199CFE01358659500A2202B /* ConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2199CFDF1358659500A2202B /* ConnectionController.m */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -137,13 +137,13 @@
 		213BCAAB134D19ED00F74194 /* NSArray+Build.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Build.m"; sourceTree = "<group>"; };
 		213BCAB5134D4A6200F74194 /* BrokenBuildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenBuildController.h; sourceTree = "<group>"; };
 		213BCAB6134D4A6200F74194 /* BrokenBuildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenBuildController.m; sourceTree = "<group>"; };
+		213C437E139F7A6100CB3748 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		213C437F139F7A6100CB3748 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		2174A94F13565A2C003869B2 /* blueButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonBg.png; sourceTree = "<group>"; };
 		2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = lib/IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
 		2174AA0613567045003869B2 /* libIBAForms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIBAForms.a; sourceTree = SOURCE_ROOT; };
 		2199CFD11358622800A2202B /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
 		2199CFD21358622800A2202B /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
-		2199CFDE1358659400A2202B /* ConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionController.h; sourceTree = "<group>"; };
-		2199CFDF1358659500A2202B /* ConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionController.m; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -293,6 +293,27 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		213C437C139F7A0200CB3748 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				213C437D139F7A4D00CB3748 /* Views */,
+				2199CFD0135861FD00A2202B /* Forms */,
+				213BCA9C134D182C00F74194 /* Common */,
+				213BCAA6134D19A700F74194 /* Model */,
+				21D278F6134BFBF50063DB03 /* Controllers */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		213C437D139F7A4D00CB3748 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213C437E139F7A6100CB3748 /* OverlayView.h */,
+				213C437F139F7A6100CB3748 /* OverlayView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2174A9FE1356703C003869B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,12 +334,9 @@
 		21D278A8134BF0BB0063DB03 = {
 			isa = PBXGroup;
 			children = (
-				2199CFD0135861FD00A2202B /* Forms */,
+				213C437C139F7A0200CB3748 /* Source */,
 				213BCAB8134D5A3B00F74194 /* Resources */,
-				213BCAA6134D19A700F74194 /* Model */,
-				213BCA9C134D182C00F74194 /* Common */,
 				210B68D9134C639D00C210B9 /* Third Party */,
-				21D278F6134BFBF50063DB03 /* Controllers */,
 				21D278BD134BF0BB0063DB03 /* Broken */,
 				21D278DD134BF0BB0063DB03 /* BrokenTests */,
 				21D278B6134BF0BB0063DB03 /* Frameworks */,
@@ -405,8 +423,6 @@
 				213BCA93134D15E300F74194 /* BuildsController.m */,
 				213BCAB5134D4A6200F74194 /* BrokenBuildController.h */,
 				213BCAB6134D4A6200F74194 /* BrokenBuildController.m */,
-				2199CFDE1358659400A2202B /* ConnectionController.h */,
-				2199CFDF1358659500A2202B /* ConnectionController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -564,7 +580,7 @@
 				213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */,
 				213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */,
 				2199CFD31358622800A2202B /* Connection.m in Sources */,
-				2199CFE01358659500A2202B /* ConnectionController.m in Sources */,
+				213C4380139F7A6100CB3748 /* OverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

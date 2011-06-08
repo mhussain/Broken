@@ -13,10 +13,12 @@
 #import "NSArray+Blocks.h"
 #import "Build.h"
 
+@class OverlayView;
 
-@interface BuildsController : UITableViewController <ASIHTTPRequestDelegate>
+@interface BuildsController : UITableViewController <ASIHTTPRequestDelegate, UISearchBarDelegate>
 {
   NSArray *_builds;
+  OverlayView *overlay_;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style address:(NSString *)address;
@@ -25,5 +27,6 @@
 - (void)settings;
 
 @property (nonatomic, copy) NSArray *builds;
+@property (nonatomic, retain) OverlayView *overlay;
 
 @end

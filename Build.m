@@ -69,11 +69,17 @@
 - (void)setBroken:(BOOL)yesOrNo;
 {
 	broken = yesOrNo;
+  stable = !yesOrNo;
 }
 
 - (BOOL)isBroken;
 {
   return broken;
+}
+
+- (BOOL)isStable;
+{
+  return stable;
 }
 
 - (BOOL)wasDefaultPush;

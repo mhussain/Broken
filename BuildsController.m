@@ -6,14 +6,15 @@
 //  Copyright 2011 REA Group. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "BuildsController.h"
 #import "BrokenBuildController.h"
 #import "JenkinsInstanceController.h"
 #import <IBAForms/IBAForms.h>
 
-@implementation BuildsController
+#import "OverlayView.h"
 
-@synthesize builds = _builds;
+@implementation BuildsController
 
 -(id)initWithStyle:(UITableViewStyle)style;
 {
@@ -50,15 +51,24 @@
   
     [self setTitle:@"Builds"];
     [[self navigationController] setNavigationBarHidden:YES];
+        
+    UISearchBar *searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(2., 5., 12., 15.)] autorelease];
+    [searchBar setDelegate:self];
     
-    UISearchBar *search = [[[UISearchBar alloc] initWithFrame:CGRectMake(2., 5., 12., 15.)] autorelease];
+    [searchBar setShowsCancelButton:YES animated:YES];
     
-    //[search setDelegate:self];
-    [search setPlaceholder:@"Search for a build"];
-    [search setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    [search sizeToFit];
+    [searchBar setPlaceholder:@"Search for a build"];
+    [searchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [searchBar respondsToSelector:@selector(searchBarTapped)];
+    [searchBar sizeToFit];
     
-    [[self tableView] setTableHeaderView:search]; 
+    [[self tableView] setTableHeaderView:searchBar]; 
+    
+    CGRect overlayFrame = CGRectMake(0., [searchBar frame].size.height, [[self tableView] bounds].size.width, [[self tableView] bounds].size.height);
+    
+    OverlayView *overlayView = [[[OverlayView alloc] initWithFrame:overlayFrame] autorelease];
+    [self setOverlay:overlayView];
+
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];
@@ -68,6 +78,17 @@
   
   return self;
 }
+- (void)dealloc;
+{
+  [_builds dealloc];
+  [overlay_ dealloc];
+  [super dealloc];
+}
+
+@synthesize builds = _builds;
+@synthesize overlay = overlay_;
+
+#pragma mark - RefreshSelector
 
 - (void)refresh;
 {
@@ -111,13 +132,7 @@
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
   NSError *error = [request error];
-  NSLog(@"Error %@",[error description]);
-}
-
-- (void)dealloc
-{
-  [_builds release];
-  [super dealloc];
+  NSLog(@"XXXXX Error %@",[error description]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -178,7 +193,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+  return YES;
 }
 
 #pragma mark - Table view data source
@@ -209,52 +225,16 @@
   [[cell textLabel] setText:[build name]];
   [[cell textLabel] setTextColor:[build currentState]];
   
-  if ([build isBroken])
-  {
+  if ([build isBroken]) {
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+  }
+  else {
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
   }
   
   return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -262,16 +242,15 @@
 {
   Build *build = [[self builds] objectAtIndex:[indexPath row]];
   
-  if (![build isBroken]) {
+  if ([build isStable]) {
     UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Stable build" 
-                                                     message:@"Why do you care? Its green isn't it?" 
+                                                     message:@"Well Done!" 
                                                     delegate:nil 
-                                           cancelButtonTitle:@"Whatever!" 
+                                           cancelButtonTitle:@"OK!" 
                                            otherButtonTitles:nil, nil] autorelease];
     [alert show]; 
   }
-  else
-  {
+  else if ([build isBroken]) {
     
     BrokenBuildController *brokenBuildController = [[[BrokenBuildController alloc] initWithNibName:nil 
                                                                                             bundle:nil 
@@ -280,6 +259,54 @@
     [[self navigationController] pushViewController:brokenBuildController animated:YES];
   
   }
+  else {
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Building" 
+                                                     message:@"Please let it build!" 
+                                                    delegate:nil 
+                                           cancelButtonTitle:@"OK!" 
+                                           otherButtonTitles:nil, nil] autorelease];
+    [alert show];
+  }
+}
+
+#pragma mark - SearchBarDelegate
+
+- (void)searchBarTapped;
+{
+  [self becomeFirstResponder];
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar;
+{
+  [searchBar setShowsScopeBar:YES];
+  [searchBar sizeToFit];
+  [searchBar setShowsCancelButton:YES animated:YES];
+  
+  [[self view] addSubview:[self overlay]];
+  
+  [UIView beginAnimations:@"FadeIn" context:nil];
+  [UIView setAnimationDuration:0.5];
+  [UIView commitAnimations];
+    
+  return YES;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;
+{
+  [searchBar setShowsCancelButton:NO animated:YES];
+  [searchBar sizeToFit];
+  [searchBar setShowsScopeBar:NO];
+  
+  return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;
+{
+  [searchBar setText:@""];
+  [searchBar resignFirstResponder];
+  [searchBar setShowsCancelButton:NO animated:YES];
+  
+  [[self overlay] removeFromSuperview];
 }
 
 @end

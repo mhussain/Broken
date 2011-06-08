@@ -48,7 +48,6 @@ NSInteger labelBorderColor = 0x556B2F;
       
       [description setTextAlignment:UITextAlignmentLeft];
       [description setUserInteractionEnabled:NO];
-//      [description setGestureRecognizers:[NSArray arrayWithObjects:UIGe, nil]];
 
       [description setText:[_build description]];
       [self styleLabel:description];
@@ -56,15 +55,13 @@ NSInteger labelBorderColor = 0x556B2F;
       
       [build_view addSubview:description];
 			
-      if ([_build wasDefaultPush])
-      {
+      if ([_build wasDefaultPush]) {
         UILabel *defaultPush = [[[UILabel alloc] initWithFrame:CGRectMake(10., 100., 300., 30.)] autorelease];
         [defaultPush setText:kDefaultInfo];
         [self styleLabel:defaultPush]; 
         [build_view addSubview:defaultPush];
       }
-      else
-      {
+      else {
         UILabel *commit_id = [[[UILabel alloc] initWithFrame:CGRectMake(10., 100., 300., 30.)] autorelease];
         [commit_id setText:[@" ID: " stringByAppendingString:[_build commitID]]];
         [self styleLabel:commit_id];

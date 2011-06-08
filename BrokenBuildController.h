@@ -11,8 +11,7 @@
 #import "ASIHTTPRequest.h"
 #import "UIColor+Hex.h"
 
-@interface BrokenBuildController : UIViewController 
-{
+@interface BrokenBuildController : UIViewController {
   Build *_build;   
 }
 
