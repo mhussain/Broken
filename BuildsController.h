@@ -17,7 +17,7 @@
 
 @interface BuildsController : UITableViewController <ASIHTTPRequestDelegate, UISearchBarDelegate>
 {
-  NSArray *_builds;
+  NSMutableArray *_builds;
   OverlayView *overlay_;
 }
 
@@ -25,8 +25,9 @@
 - (id)initWithStyle:(UITableViewStyle)style defaults:(NSUserDefaults *)defaults;
 - (void)refresh;
 - (void)settings;
+- (NSArray *)searchForBuild:(NSString *)buildName;
 
-@property (nonatomic, copy) NSArray *builds;
+@property (nonatomic, copy) NSMutableArray *builds;
 @property (nonatomic, retain) OverlayView *overlay;
 
 @end

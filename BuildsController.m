@@ -79,6 +79,7 @@
   
   return self;
 }
+
 - (void)dealloc;
 {
   [_builds dealloc];
@@ -301,6 +302,27 @@
   return YES;
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
+{
+	[searchBar setText:@""];
+  NSString *buildToFind = [searchBar text];
+  
+  if (buildToFind == nil) {
+   	return; 
+  }
+  
+  NSArray *searchResults = [self searchForBuild:buildToFind];
+  
+  [searchBar setShowsCancelButton:NO animated:YES];
+  [searchBar resignFirstResponder];
+  [[self overlay] removeFromSuperview];
+  
+  if (searchResults != nil) {
+	  [self setBuilds:(NSMutableArray *)searchResults];
+  	[[self tableView] reloadData];
+  }
+}
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;
 {
   [searchBar setText:@""];
@@ -310,4 +332,19 @@
   [[self overlay] removeFromSuperview];
 }
 
+#pragma mark - Search
+
+- (NSArray *)searchForBuild:(NSString *)buildName;
+{
+	if (nil != buildName) {
+    for (Build *build in _builds) {
+      
+      if ([buildName isEqualToString:[build name]]) {
+        return [NSArray arrayWithObject:build];
+      }
+    }
+  }
+  
+  return nil;
+}
 @end
