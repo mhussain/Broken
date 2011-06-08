@@ -264,8 +264,14 @@
   if ([build isBroken]) {
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
   }
-  else {
+  else if([build isStable]) {
     [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+  }
+  else {
+    UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
+    [spinner startAnimating];
+    [spinner setHidden:NO];
+    [cell setAccessoryView:spinner];
   }
   
   return cell;

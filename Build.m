@@ -35,9 +35,11 @@
   }
   else if([color isEqualToString:@"blue"]) {
     [build setCurrentState:[UIColor colorWithHex:0x006633]];
+    [build setStable:YES];
   }
   else {
     [build setCurrentState:[UIColor blueColor]];
+    [build setBuilding:YES];
   }
   
   return build;
@@ -69,7 +71,6 @@
 - (void)setBroken:(BOOL)yesOrNo;
 {
 	broken = yesOrNo;
-  stable = !yesOrNo;
 }
 
 - (BOOL)isBroken;
@@ -77,9 +78,24 @@
   return broken;
 }
 
+- (void)setStable:(BOOL)yesOrNo;
+{
+  stable = yesOrNo;
+}
+
 - (BOOL)isStable;
 {
   return stable;
+}
+
+- (BOOL)isBuilding;
+{
+  return building;
+}
+
+- (void)setBuilding:(BOOL)yesOrNo;
+{
+  building = yesOrNo;
 }
 
 - (BOOL)wasDefaultPush;

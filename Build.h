@@ -24,6 +24,7 @@
   BOOL defaultPush;
   BOOL broken;
   BOOL stable;
+  BOOL building;
 
 }
 
@@ -43,6 +44,10 @@
 - (BOOL)isBroken;
 
 - (BOOL)isStable;
+- (void)setStable:(BOOL)yesOrNo;
+
+- (BOOL)isBuilding;
+- (void)setBuilding:(BOOL)yesOrNo;
 
 - (BOOL)wasDefaultPush;
 - (void)setDefaultPush:(BOOL)yesOrNo;
