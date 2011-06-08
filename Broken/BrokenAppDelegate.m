@@ -7,8 +7,6 @@
 
 #import "BrokenAppDelegate.h"
 #import "BuildsController.h"
-#import "Connection.h"
-#import "ConnectionController.h"
 
 @implementation BrokenAppDelegate
 
