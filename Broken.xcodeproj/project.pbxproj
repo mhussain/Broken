@@ -41,7 +41,6 @@
 		213C4380139F7A6100CB3748 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213C437F139F7A6100CB3748 /* OverlayView.m */; };
 		2174A95013565A2C003869B2 /* blueButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2174A94F13565A2C003869B2 /* blueButtonBg.png */; };
 		2174AA0713567045003869B2 /* libIBAForms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2174AA0613567045003869B2 /* libIBAForms.a */; };
-		2199CFD31358622800A2202B /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2199CFD21358622800A2202B /* Connection.m */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -142,8 +141,6 @@
 		2174A94F13565A2C003869B2 /* blueButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonBg.png; sourceTree = "<group>"; };
 		2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = lib/IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
 		2174AA0613567045003869B2 /* libIBAForms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libIBAForms.a; sourceTree = SOURCE_ROOT; };
-		2199CFD11358622800A2202B /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
-		2199CFD21358622800A2202B /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -297,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				213C437D139F7A4D00CB3748 /* Views */,
-				2199CFD0135861FD00A2202B /* Forms */,
 				213BCA9C134D182C00F74194 /* Common */,
 				213BCAA6134D19A700F74194 /* Model */,
 				21D278F6134BFBF50063DB03 /* Controllers */,
@@ -320,15 +316,6 @@
 				2174AA051356703C003869B2 /* libIBAForms.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2199CFD0135861FD00A2202B /* Forms */ = {
-			isa = PBXGroup;
-			children = (
-				2199CFD11358622800A2202B /* Connection.h */,
-				2199CFD21358622800A2202B /* Connection.m */,
-			);
-			name = Forms;
 			sourceTree = "<group>";
 		};
 		21D278A8134BF0BB0063DB03 = {
@@ -579,7 +566,6 @@
 				213BCAA9134D19B800F74194 /* Build.m in Sources */,
 				213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */,
 				213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */,
-				2199CFD31358622800A2202B /* Connection.m in Sources */,
 				213C4380139F7A6100CB3748 /* OverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

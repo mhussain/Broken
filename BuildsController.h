@@ -19,6 +19,7 @@
 {
   NSMutableArray *_builds;
   OverlayView *overlay_;
+  UISearchBar *searchBar_;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style address:(NSString *)address;
@@ -29,5 +30,6 @@
 
 @property (nonatomic, copy) NSMutableArray *builds;
 @property (nonatomic, retain) OverlayView *overlay;
+@property (nonatomic, retain) UISearchBar *searchBar;
 
 @end

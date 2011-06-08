@@ -53,24 +53,48 @@
     [self setTitle:@"Builds"];
     [[self navigationController] setNavigationBarHidden:YES];
         
-    UISearchBar *searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(2., 5., 12., 15.)] autorelease];
-    [searchBar setDelegate:self];
+    searchBar_ = [[[UISearchBar alloc] initWithFrame:CGRectMake(2., 5., 12., 15.)] autorelease];
+    [searchBar_ setDelegate:self];
     
-    [searchBar setShowsCancelButton:YES animated:YES];
+    [searchBar_ setShowsCancelButton:YES animated:YES];
     
-    [searchBar setPlaceholder:@"Search for a build"];
-    [searchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    [searchBar respondsToSelector:@selector(searchBarTapped)];
-    [searchBar sizeToFit];
+    [searchBar_ setPlaceholder:@"Search for a build"];
+    [searchBar_ setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [searchBar_ respondsToSelector:@selector(searchBarTapped)];
+    [searchBar_ sizeToFit];
     
-    [[self tableView] setTableHeaderView:searchBar]; 
-    
-    CGRect overlayFrame = CGRectMake(0., [searchBar frame].size.height, [[self tableView] bounds].size.width, [[self tableView] bounds].size.height);
+    CGRect overlayFrame = CGRectMake(0., [searchBar_ frame].size.height, [[self tableView] bounds].size.width, [[self tableView] bounds].size.height);
     
     OverlayView *overlayView = [[[OverlayView alloc] initWithFrame:overlayFrame] autorelease];
+    [overlayView addGestureRecognizer:[[[UITapGestureRecognizer alloc] initWithTarget:self 
+                                                                               action:@selector(tappedOverlay)] autorelease]];
     [self setOverlay:overlayView];
 
     
+    [[self tableView] setTableHeaderView:searchBar_]; 
+    
+    UIBarButtonItem *brokenBuilds = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks 
+                                                                                   target:self 
+                                                                                   action:@selector(displayBrokenBuilds)] autorelease];
+    UIBarButtonItem *passingBuilds = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
+                                                                                    target:self 
+                                                                                    action:@selector(displayPassingBuilds)] autorelease];
+    
+    CGFloat filterToolbarYOrigin = [[self view] frame].size.height - [searchBar_ frame].size.height - 10;
+    UIView *filterToolbarView = [[[UIView alloc] initWithFrame:CGRectMake(0., filterToolbarYOrigin,
+                                                                      [[self tableView] bounds].size.width, 
+                                                                      [searchBar_ frame].size.height)] autorelease];
+    UIToolbar *filterToolbar = [[[UIToolbar alloc] initWithFrame:CGRectZero] autorelease];
+    [filterToolbar setItems:[NSArray arrayWithObjects:brokenBuilds,passingBuilds, nil] animated:YES];
+    [filterToolbar setBarStyle:UIBarStyleBlackTranslucent];
+    [filterToolbarView addSubview:filterToolbar];
+    [filterToolbarView sizeToFit];
+    [filterToolbarView layoutSubviews];
+    
+    [[self navigationController] setToolbarHidden:NO animated:NO];
+    //[[self view] addSubview:filterToolbarView];
+    [[self view] layoutSubviews];
+
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];
     [request startAsynchronous];
@@ -82,6 +106,7 @@
 
 - (void)dealloc;
 {
+  [searchBar_ dealloc];
   [_builds dealloc];
   [overlay_ dealloc];
   [super dealloc];
@@ -89,8 +114,9 @@
 
 @synthesize builds = _builds;
 @synthesize overlay = overlay_;
+@synthesize searchBar = searchBar_;
 
-#pragma mark - RefreshSelector
+#pragma mark - NavBarButtons
 
 - (void)refresh;
 {
@@ -104,14 +130,20 @@
   [request startAsynchronous];
 }
 
+
 - (void)settings;
 {
   JenkinsInstanceController *settings = [[[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil] autorelease];
   [[self navigationController] pushViewController:settings animated:YES];
 }
 
-#pragma mark -
-#pragma mark ASIHTTPRequestDelegate
+- (void)tappedOverlay;
+{
+  [[self overlay] removeFromSuperview];
+  [[self searchBar] resignFirstResponder];
+}
+
+#pragma mark - ASIHTTPRequestDelegate
 
 - (void)requestStarted:(ASIHTTPRequest *)request;
 {
@@ -149,13 +181,14 @@
 
 - (void)viewDidLoad
 {
+  [super viewDidLoad];
   [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
                                                  initWithTitle:@"Settings" 
                                                  style:UIButtonTypeRoundedRect
                                                  target:self 
                                                  action:@selector(settings)] autorelease] animated:YES];
   
-    [super viewDidLoad];
+  [super viewDidLoad];
   [[self navigationItem] setHidesBackButton:YES];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -163,6 +196,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
 }
 
 - (void)viewDidUnload
