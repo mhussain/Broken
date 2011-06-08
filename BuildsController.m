@@ -127,14 +127,14 @@
   NSDictionary *object = [parser objectWithString:json_string error:nil];
   NSArray *builds = [[object objectForKey:@"jobs"] asBuilds];
   
-  [self setBuilds:builds];
+  [self setBuilds:(NSMutableArray *)builds];
   [[self tableView] reloadData];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
   NSError *error = [request error];
-  NSLog(@"XXXXX Error %@",[error description]);
+  NSLog(@"Error Fetching Data %@",[error description]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -298,27 +298,25 @@
   [searchBar setShowsCancelButton:NO animated:YES];
   [searchBar sizeToFit];
   [searchBar setShowsScopeBar:NO];
-  
   return YES;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 {
-	[searchBar setText:@""];
   NSString *buildToFind = [searchBar text];
   
   if (buildToFind == nil) {
    	return; 
   }
   
-  NSArray *searchResults = [self searchForBuild:buildToFind];
+  NSMutableArray *searchResults = [self searchForBuild:buildToFind];
   
   [searchBar setShowsCancelButton:NO animated:YES];
   [searchBar resignFirstResponder];
   [[self overlay] removeFromSuperview];
   
   if (searchResults != nil) {
-	  [self setBuilds:(NSMutableArray *)searchResults];
+	  [self setBuilds:searchResults];
   	[[self tableView] reloadData];
   }
 }
@@ -334,17 +332,21 @@
 
 #pragma mark - Search
 
-- (NSArray *)searchForBuild:(NSString *)buildName;
+- (NSMutableArray *)searchForBuild:(NSString *)buildName;
 {
+  NSMutableArray *matchedBuilds = [[[NSMutableArray alloc] init] autorelease];
 	if (nil != buildName) {
+    
     for (Build *build in _builds) {
       
       if ([buildName isEqualToString:[build name]]) {
-        return [NSArray arrayWithObject:build];
+        [matchedBuilds insertObject:build atIndex:0];
       }
+      
     }
+    
   }
   
-  return nil;
+  return matchedBuilds;
 }
 @end

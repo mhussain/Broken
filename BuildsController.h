@@ -25,7 +25,7 @@
 - (id)initWithStyle:(UITableViewStyle)style defaults:(NSUserDefaults *)defaults;
 - (void)refresh;
 - (void)settings;
-- (NSArray *)searchForBuild:(NSString *)buildName;
+- (NSMutableArray *)searchForBuild:(NSString *)buildName;
 
 @property (nonatomic, copy) NSMutableArray *builds;
 @property (nonatomic, retain) OverlayView *overlay;
