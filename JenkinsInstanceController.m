@@ -23,12 +23,19 @@
   {
     [self setTitle:@"Broken?"];
     
+    
+    
     UIView *add_host = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
     UILabel *host_label = [[[UILabel alloc] initWithFrame:CGRectMake(10., 10., 170., 30.)] autorelease];
-    [host_label setText:@"Hostname"];
+    [host_label setBackgroundColor:[UIColor clearColor]];
+    [host_label setTextColor:[UIColor whiteColor]];
+    [host_label setText:@"Host"];
     
     UILabel *port_label = [[[UILabel alloc] initWithFrame:CGRectMake(10., 50., 170., 30.)] autorelease];
     [port_label setText:@"Port"];
+    [port_label setBackgroundColor:[UIColor clearColor]];
+    [port_label setTextColor:[UIColor whiteColor]];
+
     
     _host = [[UITextField alloc] initWithFrame:CGRectMake(100., 10., 200., 30.)];
     [_host setBorderStyle:UITextBorderStyleRoundedRect];
@@ -66,6 +73,7 @@
     [connect setShowsTouchWhenHighlighted:YES];
     
     [connect setTitle:@"Connect to Jenkins" forState:UIControlStateNormal];
+    [connect setBackgroundImage:[UIImage imageNamed:@"buttonBg.png"] forState:UIControlStateNormal];
     [connect setTitle:@"Connecting ..." forState:UIControlStateSelected];
     [connect addTarget:self action:@selector(connect) forControlEvents:UIControlEventTouchUpInside];
     
@@ -76,6 +84,7 @@
     [add_host addSubview:_port];
     
     [add_host addSubview:connect];
+    [add_host setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]]];
     
     [self setView:add_host];
     [[self navigationItem] setHidesBackButton:YES];

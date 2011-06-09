@@ -17,4 +17,7 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navigationController;
 
+- (void)displaySplash;
+- (void)delayedHideSplash:(UIView *)splash;
+
 @end

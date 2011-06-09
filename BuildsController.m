@@ -36,7 +36,9 @@
   self = [super initWithStyle:style];
    
   if (self) {
-
+    
+    //[[self tableView] setBackgroundView:[UIImage imageNamed:@"Background.png"]];
+    
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
                                                    initWithTitle:@"Settings" 
                                                    style:UIButtonTypeRoundedRect

@@ -20,11 +20,16 @@
   [build setName:[dictionary objectForKey:@"name"]];
   [build setUrl:[dictionary objectForKey:@"url"]];
   [build setCurrentState:[UIColor grayColor]];
+  
   [build setBroken:NO];
+  [build setStable:NO];
+  [build setBuilding:NO];
+  
   [build setBrokenWhen:@"Unknown"];
   [build setCommitID:@"Unknown"];
   [build setComment:@"No Comment"];
   [build setCulprit:@"Unknown"];
+  
   [build setDefaultPush:NO];
   
   NSString *color = [dictionary objectForKey:@"color"];

@@ -46,8 +46,39 @@
 
   [self setWindow:_window];
   [[self window] makeKeyAndVisible];
-
+  [self displaySplash];
   return YES;
+}
+
+- (void)displaySplash;
+{
+  UIImageView *splash = [[[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+  [splash setTag:909];
+  [splash setImage:[UIImage imageNamed:@"Default.png"]];
+  
+  [_window addSubview:splash];
+  [_window bringSubviewToFront:splash];
+  
+	[self delayedHideSplash:splash];
+}
+
+- (void)delayedHideSplash:(UIView *)splash;
+{
+  [self performSelector:@selector(hideSplash:) withObject:splash afterDelay:1.];
+}
+
+- (void)hideSplash:(UIView *)splash;
+{
+  [UIView beginAnimations:@"hide splash" context:splash];
+  
+  [UIView setAnimationDuration:0.4];
+  [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:[splash window] cache:YES];
+  [UIView setAnimationDelegate:self];
+  [UIView setAnimationDidStopSelector:@selector(clearSplashWithAnimationID:finished:context:)];
+  
+  [splash setAlpha:0.];
+  
+  [UIView commitAnimations];
 }
 
 
