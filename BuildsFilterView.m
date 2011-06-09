@@ -48,7 +48,11 @@
 }
 
 - (void)dealloc;
-{
+{	
+  [bottomBar_ dealloc];
+  [passingBuilds_ dealloc];
+  [failingBuilds_ dealloc];
+  [allBuilds_ dealloc];
     [super dealloc];
 }
 
