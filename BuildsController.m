@@ -80,6 +80,7 @@
     [[self tableView] setTableHeaderView:searchBar_]; 
 
     BuildsFilterView *filterView = [[[BuildsFilterView alloc] initWithFrame:CGRectMake(0., 0., 320., 40.)] autorelease];
+    [filterView setDelegate:self];
     
     [[self tableView] setTableFooterView:filterView];
     //[[self view] layoutSubviews];
@@ -97,11 +98,13 @@
 {
   [searchBar_ dealloc];
   [_builds dealloc];
+  [allBuilds_ dealloc];
   [overlay_ dealloc];
   [super dealloc];
 }
 
 @synthesize builds = _builds;
+@synthesize allBuilds = allBuilds_;
 @synthesize overlay = overlay_;
 @synthesize searchBar = searchBar_;
 
@@ -149,6 +152,7 @@
   NSArray *builds = [[object objectForKey:@"jobs"] asBuilds];
   
   [self setBuilds:(NSMutableArray *)builds];
+  [self setAllBuilds:builds];
   [[self tableView] reloadData];
 }
 
@@ -378,4 +382,46 @@
   
   return matchedBuilds;
 }
+
+#pragma mark - BuildsFilterViewDelegate
+
+- (void)filterAllBuilds;
+{
+  NSLog(@"Filtering All Builds");
+  [self setBuilds:(NSMutableArray *)allBuilds_];
+  [[self tableView] reloadData];
+}
+
+- (void)filterFailingBuilds;
+{
+  [self setBuilds:(NSMutableArray *)allBuilds_];
+  NSLog(@"Filtering Failing Builds");
+  NSMutableArray *failingBuilds = [[[NSMutableArray alloc] init] autorelease];
+  
+	for (Build *build in _builds) {
+    if ([build isBroken]) {
+      [failingBuilds insertObject:build atIndex:0];
+    }
+  }
+  [self setBuilds:failingBuilds];
+  [[self tableView] reloadData];
+
+}
+- (void)filterPassingBuilds;
+{
+  [self setBuilds:(NSMutableArray *)allBuilds_];
+  NSLog(@"Filtering Passing Builds");
+  NSMutableArray *failingBuilds = [[[NSMutableArray alloc] init] autorelease];
+  
+	for (Build *build in _builds) {
+    if ([build isStable]) {
+      [failingBuilds insertObject:build atIndex:0];
+    }
+  }
+  [self setBuilds:failingBuilds];
+  [[self tableView] reloadData];
+
+}
+
+
 @end

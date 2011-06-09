@@ -6,9 +6,10 @@
 //  Copyright 2011 REA Group. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-
 @protocol BuildsFilterViewDelegate <NSObject>
+
+- (void)filterFailingBuilds;
+- (void)filterPassingBuilds;
+- (void)filterAllBuilds;
 
 @end

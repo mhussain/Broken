@@ -13,11 +13,14 @@
 #import "NSArray+Blocks.h"
 #import "Build.h"
 
+#import "BuildsFilterViewDelegate.h"
+
 @class OverlayView;
 
-@interface BuildsController : UITableViewController <ASIHTTPRequestDelegate, UISearchBarDelegate>
+@interface BuildsController : UITableViewController <ASIHTTPRequestDelegate, UISearchBarDelegate, BuildsFilterViewDelegate>
 {
   NSMutableArray *_builds;
+  NSArray *allBuilds_;
   OverlayView *overlay_;
   UISearchBar *searchBar_;
 }
@@ -29,6 +32,7 @@
 - (NSMutableArray *)searchForBuild:(NSString *)buildName;
 
 @property (nonatomic, copy) NSMutableArray *builds;
+@property (nonatomic, copy) NSArray *allBuilds;
 @property (nonatomic, retain) OverlayView *overlay;
 @property (nonatomic, retain) UISearchBar *searchBar;
 
