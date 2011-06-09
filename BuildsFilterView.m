@@ -23,22 +23,22 @@
     passingBuilds_ = [[[CustomButton alloc] initWithFrame:CGRectMake(35., 5., 80., 30.)] autorelease];
     [passingBuilds_ setTitle:@"Stable" forState:UIControlStateNormal];
     [passingBuilds_ addTarget:self action:@selector(passingBuildsTapped) forControlEvents:UIControlEventTouchUpInside];
-    [passingBuilds_ setHighColor:[UIColor redColor]];
-    [passingBuilds_ setLowColor:[UIColor grayColor]];    
+    [passingBuilds_ setHighColor:[UIColor greenColor]];
+    [passingBuilds_ setLowColor:[UIColor whiteColor]];    
     [bottomBar_ addSubview:passingBuilds_];
     
     failingBuilds_ = [[[CustomButton alloc] initWithFrame:CGRectMake(120., 5., 80., 30.)] autorelease];	
     [failingBuilds_ setTitle:@"Failing" forState:UIControlStateNormal];
     [failingBuilds_ addTarget:self action:@selector(failingBuildsTapped) forControlEvents:UIControlEventTouchUpInside];
     [failingBuilds_ setHighColor:[UIColor redColor]];
-    [failingBuilds_ setLowColor:[UIColor grayColor]];    
+    [failingBuilds_ setLowColor:[UIColor whiteColor]];    
     [bottomBar_ addSubview:failingBuilds_];
 
     allBuilds_ = [[[CustomButton alloc] initWithFrame:CGRectMake(205., 5., 80., 30.)] autorelease];	
     [allBuilds_ setTitle:@"All" forState:UIControlStateNormal];
     [allBuilds_ addTarget:self action:@selector(allBuildsTapped) forControlEvents:UIControlEventTouchUpInside];
-    [allBuilds_ setHighColor:[UIColor redColor]];
-    [allBuilds_ setLowColor:[UIColor grayColor]];
+    [allBuilds_ setHighColor:[UIColor purpleColor]];
+    [allBuilds_ setLowColor:[UIColor whiteColor]];
     [bottomBar_ addSubview:allBuilds_];    
     
     [self addSubview:bottomBar_];

@@ -11,6 +11,8 @@
 #import "JSON.h"
 #import "UIColor+Hex.h"
 
+#import "CustomButton.h"
+
 @implementation JenkinsInstanceController
 
 @synthesize host=_host;
@@ -67,17 +69,15 @@
       [_port setPlaceholder:@"8080"];
     }
     
-   UIButton *connect = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+   CustomButton *connect = [[[CustomButton alloc] initWithFrame:CGRectMake(30., 100., 250., 30.)] autorelease];
 
-    [connect setFrame:CGRectMake(30., 100., 250., 30.)];
-    [[connect imageView] setExclusiveTouch:YES];
+    [connect setHighColor:[UIColor greenColor]];
+    [connect setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [connect setLowColor:[UIColor whiteColor]];
     [connect setShowsTouchWhenHighlighted:YES];
     
     [connect setTitle:@"Connect to Jenkins" forState:UIControlStateNormal];
-    [connect setBackgroundImage:[UIImage imageNamed:@"buttonBg.png"] forState:UIControlStateNormal];
-    [connect setTitle:@"Connecting ..." forState:UIControlStateSelected];
     [connect addTarget:self action:@selector(connect) forControlEvents:UIControlEventTouchUpInside];
-    [[connect layer] setCornerRadius:0.8];
     
     [add_host addSubview:host_label];    
     [add_host addSubview:_host];

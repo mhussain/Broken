@@ -14,6 +14,7 @@
 {
   self = [super initWithFrame:frame];
   if (self) {
+    [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     // Initialize the gradient layer
     gradientLayer = [[CAGradientLayer alloc] init];
     // Set its bounds to be the same of its parent
