@@ -42,12 +42,11 @@
     [_host setAutocorrectionType:UITextAutocorrectionTypeNo];
     
     NSString *hostname = [self retrieveFromUserDefaults:@"host"];
-    if (hostname) 
-    {
+    
+    if (hostname) {
       [_host setText:hostname];
     }
-    else
-    {
+    else {
       [_host setPlaceholder:@"http://...."];
     }
    

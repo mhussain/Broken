@@ -37,7 +37,7 @@
    
   if (self) {
     
-    //[[self tableView] setBackgroundView:[UIImage imageNamed:@"Background.png"]];
+    [[self tableView] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]]];
     
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
                                                    initWithTitle:@"Settings" 
@@ -59,6 +59,7 @@
     [searchBar_ setDelegate:self];
     
     [searchBar_ setShowsCancelButton:YES animated:YES];
+    [searchBar_ setBarStyle:UIBarStyleBlackTranslucent];
     
     [searchBar_ setPlaceholder:@"Search for a build"];
     [searchBar_ setAutocapitalizationType:UITextAutocapitalizationTypeNone];
