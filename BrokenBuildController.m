@@ -31,6 +31,8 @@ NSInteger labelBorderColor = 0x556B2F;
   	NSString *kDefaultInfo = @"This build was pushed by the server. No commit data to report";
     if (self) {
       
+      //[[[self navigationController] navigationBar] setBarStyle:UIBarStyleBlackTranslucent];
+      
       _build = [build retain];
       [self setTitle:[_build name]];
       

@@ -14,6 +14,7 @@
 #import "JenkinsInstanceController.h"
 
 #import "OverlayView.h"
+#import "BuildsFilterView.h"
 
 @implementation BuildsController
 
@@ -37,10 +38,12 @@
    
   if (self) {
     
+    [[[self navigationController] navigationBar] setBarStyle:UIBarStyleBlackTranslucent];
+    
     [[self tableView] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]]];
     
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
-                                                   initWithImage:[UIImage imageNamed:@"settings.png"] 
+                                                   initWithImage:[UIImage imageNamed:@"Settings.png"] 
                                                    style:UIButtonTypeRoundedRect
                                                    target:self 
                                                    action:@selector(settings)] autorelease] animated:YES];
@@ -75,28 +78,11 @@
 
     
     [[self tableView] setTableHeaderView:searchBar_]; 
+
+    BuildsFilterView *filterView = [[[BuildsFilterView alloc] initWithFrame:CGRectMake(0., 0., 320., 40.)] autorelease];
     
-    UIBarButtonItem *brokenBuilds = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks 
-                                                                                   target:self 
-                                                                                   action:@selector(displayBrokenBuilds)] autorelease];
-    UIBarButtonItem *passingBuilds = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
-                                                                                    target:self 
-                                                                                    action:@selector(displayPassingBuilds)] autorelease];
-    
-    CGFloat filterToolbarYOrigin = [[self view] frame].size.height - [searchBar_ frame].size.height - 10;
-    UIView *filterToolbarView = [[[UIView alloc] initWithFrame:CGRectMake(0., filterToolbarYOrigin,
-                                                                      [[self tableView] bounds].size.width, 
-                                                                      [searchBar_ frame].size.height)] autorelease];
-    UIToolbar *filterToolbar = [[[UIToolbar alloc] initWithFrame:CGRectZero] autorelease];
-    [filterToolbar setItems:[NSArray arrayWithObjects:brokenBuilds,passingBuilds, nil] animated:YES];
-    [filterToolbar setBarStyle:UIBarStyleBlackTranslucent];
-    [filterToolbarView addSubview:filterToolbar];
-    [filterToolbarView sizeToFit];
-    [filterToolbarView layoutSubviews];
-    
-    [[self navigationController] setToolbarHidden:NO animated:NO];
-    //[[self view] addSubview:filterToolbarView];
-    [[self view] layoutSubviews];
+    [[self tableView] setTableFooterView:filterView];
+    //[[self view] layoutSubviews];
 
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];

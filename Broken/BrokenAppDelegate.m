@@ -19,25 +19,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 {
   _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  [_window setBackgroundColor:[UIColor whiteColor]];
   
   _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
+  [[_navigationController navigationBar] setBarStyle:UIBarStyleBlack];
   
   NSMutableDictionary *form = [[[NSMutableDictionary alloc] init] autorelease];
   
 	// Values set on the model will be reflected in the form fields.
 	[form setObject:@"A value contained in the model" forKey:@"readOnlyText"];
-
     
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   
-  if ([defaults objectForKey:@"host"]) 
-  {
+  if ([defaults objectForKey:@"host"]) {
 		builds_controller = [[BuildsController alloc] initWithStyle:UITableViewStyleGrouped defaults:defaults];
     [_navigationController pushViewController:builds_controller animated:YES];
   }
-  else 
-  {
+  else {
     jenkins_instance_controller = [[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil];
     [_navigationController pushViewController:jenkins_instance_controller animated:YES];
   }
@@ -47,6 +44,7 @@
   [self setWindow:_window];
   [[self window] makeKeyAndVisible];
   [self displaySplash];
+  
   return YES;
 }
 

@@ -45,8 +45,11 @@
 		2178E76A13A05A0D00B04AD4 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E76913A05A0D00B04AD4 /* Background.png */; };
 		2178E76C13A05C0C00B04AD4 /* buttonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E76B13A05C0C00B04AD4 /* buttonBg.png */; };
 		2178E76E13A0605900B04AD4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E76D13A0605800B04AD4 /* icon.png */; };
-		2178E77213A06F8F00B04AD4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E77113A06F8F00B04AD4 /* settings.png */; };
-		2178E77413A070DB00B04AD4 /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E77313A070DB00B04AD4 /* Refresh.png */; };
+		21A5B83213A0F79500AD2C30 /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A5B83113A0F79500AD2C30 /* Refresh.png */; };
+		21A5B83813A0F9E200AD2C30 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A5B83713A0F9E200AD2C30 /* Settings.png */; };
+		21A5B83E13A0FD2D00AD2C30 /* BuildsFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A5B83D13A0FD2D00AD2C30 /* BuildsFilterView.m */; };
+		21A5B84013A1053900AD2C30 /* FilterButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A5B83F13A1053900AD2C30 /* FilterButtonBg.png */; };
+		21A5B84313A108AB00AD2C30 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A5B84213A108AB00AD2C30 /* CustomButton.m */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -151,8 +154,14 @@
 		2178E76913A05A0D00B04AD4 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		2178E76B13A05C0C00B04AD4 /* buttonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBg.png; sourceTree = "<group>"; };
 		2178E76D13A0605800B04AD4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		2178E77113A06F8F00B04AD4 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		2178E77313A070DB00B04AD4 /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		21A5B83113A0F79500AD2C30 /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		21A5B83713A0F9E200AD2C30 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		21A5B83C13A0FD2D00AD2C30 /* BuildsFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsFilterView.h; sourceTree = "<group>"; };
+		21A5B83D13A0FD2D00AD2C30 /* BuildsFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildsFilterView.m; sourceTree = "<group>"; };
+		21A5B83F13A1053900AD2C30 /* FilterButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterButtonBg.png; sourceTree = "<group>"; };
+		21A5B84113A108AB00AD2C30 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		21A5B84213A108AB00AD2C30 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		21A5B84813A10D2E00AD2C30 /* BuildsFilterViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildsFilterViewDelegate.h; sourceTree = "<group>"; };
 		21D278B3134BF0BB0063DB03 /* iBroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -290,6 +299,8 @@
 			children = (
 				213BCAA7134D19B800F74194 /* Build.h */,
 				213BCAA8134D19B800F74194 /* Build.m */,
+				21A5B84113A108AB00AD2C30 /* CustomButton.h */,
+				21A5B84213A108AB00AD2C30 /* CustomButton.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,11 +310,12 @@
 			children = (
 				2178E76913A05A0D00B04AD4 /* Background.png */,
 				2178E76D13A0605800B04AD4 /* icon.png */,
+				21A5B83F13A1053900AD2C30 /* FilterButtonBg.png */,
+				21A5B83713A0F9E200AD2C30 /* Settings.png */,
 				2178E76B13A05C0C00B04AD4 /* buttonBg.png */,
+				21A5B83113A0F79500AD2C30 /* Refresh.png */,
 				2178E76513A0568900B04AD4 /* Default.png */,
-				2178E77113A06F8F00B04AD4 /* settings.png */,
 				2174A94F13565A2C003869B2 /* blueButtonBg.png */,
-				2178E77313A070DB00B04AD4 /* Refresh.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -311,6 +323,7 @@
 		213C437C139F7A0200CB3748 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				21A5B84413A10CF100AD2C30 /* Delegates */,
 				213C437D139F7A4D00CB3748 /* Views */,
 				213BCA9C134D182C00F74194 /* Common */,
 				213BCAA6134D19A700F74194 /* Model */,
@@ -324,6 +337,8 @@
 			children = (
 				213C437E139F7A6100CB3748 /* OverlayView.h */,
 				213C437F139F7A6100CB3748 /* OverlayView.m */,
+				21A5B83C13A0FD2D00AD2C30 /* BuildsFilterView.h */,
+				21A5B83D13A0FD2D00AD2C30 /* BuildsFilterView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -334,6 +349,14 @@
 				2174AA051356703C003869B2 /* libIBAForms.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		21A5B84413A10CF100AD2C30 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				21A5B84813A10D2E00AD2C30 /* BuildsFilterViewDelegate.h */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		21D278A8134BF0BB0063DB03 = {
@@ -524,8 +547,9 @@
 				2178E76A13A05A0D00B04AD4 /* Background.png in Resources */,
 				2178E76C13A05C0C00B04AD4 /* buttonBg.png in Resources */,
 				2178E76E13A0605900B04AD4 /* icon.png in Resources */,
-				2178E77213A06F8F00B04AD4 /* settings.png in Resources */,
-				2178E77413A070DB00B04AD4 /* Refresh.png in Resources */,
+				21A5B83213A0F79500AD2C30 /* Refresh.png in Resources */,
+				21A5B83813A0F9E200AD2C30 /* Settings.png in Resources */,
+				21A5B84013A1053900AD2C30 /* FilterButtonBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +615,8 @@
 				213BCAAC134D19ED00F74194 /* NSArray+Build.m in Sources */,
 				213BCAB7134D4A6300F74194 /* BrokenBuildController.m in Sources */,
 				213C4380139F7A6100CB3748 /* OverlayView.m in Sources */,
+				21A5B83E13A0FD2D00AD2C30 /* BuildsFilterView.m in Sources */,
+				21A5B84313A108AB00AD2C30 /* CustomButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

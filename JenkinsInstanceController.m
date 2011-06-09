@@ -22,9 +22,10 @@
 
   if (self) 
   {
-    [self setTitle:@"Broken?"];
+    [self setTitle:@"iBroke"];
     
-    
+    //[[[self navigationController] navigationBar] setBarStyle:UIBarStyleBlackTranslucent];
+    //[[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
     
     UIView *add_host = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
     UILabel *host_label = [[[UILabel alloc] initWithFrame:CGRectMake(10., 10., 170., 30.)] autorelease];
