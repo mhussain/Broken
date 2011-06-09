@@ -5,6 +5,7 @@
 //  Created by Mujtaba Hussain on 6/04/11.
 //  Copyright 2011 REA Group. All rights reserved.
 //
+#import <QuartzCore/QuartzCore.h>
 
 #import "JenkinsInstanceController.h"
 #import "JSON.h"
@@ -75,6 +76,7 @@
     [connect setBackgroundImage:[UIImage imageNamed:@"buttonBg.png"] forState:UIControlStateNormal];
     [connect setTitle:@"Connecting ..." forState:UIControlStateSelected];
     [connect addTarget:self action:@selector(connect) forControlEvents:UIControlEventTouchUpInside];
+    [[connect layer] setCornerRadius:0.8];
     
     [add_host addSubview:host_label];    
     [add_host addSubview:_host];
