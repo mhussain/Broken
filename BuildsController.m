@@ -40,13 +40,13 @@
     [[self tableView] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]]];
     
     [[self navigationItem] setRightBarButtonItem:[[[UIBarButtonItem alloc] 
-                                                   initWithTitle:@"Settings" 
+                                                   initWithImage:[UIImage imageNamed:@"settings.png"] 
                                                    style:UIButtonTypeRoundedRect
                                                    target:self 
                                                    action:@selector(settings)] autorelease] animated:YES];
     
     [[self navigationItem] setLeftBarButtonItem:[[[UIBarButtonItem alloc] 
-                                                   initWithTitle:@"Refresh" 
+                                                   initWithImage:[UIImage imageNamed:@"Refresh.png"]  
                                                    style:UIButtonTypeRoundedRect
                                                    target:self 
                                                    action:@selector(refresh)] autorelease] animated:YES];

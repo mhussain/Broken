@@ -28,8 +28,9 @@ NSInteger labelBorderColor = 0x556B2F;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   
-    if (self) 
-    {
+  	NSString *kDefaultInfo = @"This build was pushed by the server. No commit data to report";
+    if (self) {
+      
       _build = [build retain];
       [self setTitle:[_build name]];
       
@@ -85,7 +86,8 @@ NSInteger labelBorderColor = 0x556B2F;
         [build_view addSubview:brokenWhen];
 
 			}      
-      [build_view setBackgroundColor:[UIColor colorWithHex:viewBackgroundColor]];
+      //[build_view setBackgroundColor:[UIColor colorWithHex:viewBackgroundColor]];
+      [build_view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]]];
       [self setView:build_view];
     }
   

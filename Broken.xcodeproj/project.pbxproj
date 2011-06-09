@@ -45,6 +45,8 @@
 		2178E76A13A05A0D00B04AD4 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E76913A05A0D00B04AD4 /* Background.png */; };
 		2178E76C13A05C0C00B04AD4 /* buttonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E76B13A05C0C00B04AD4 /* buttonBg.png */; };
 		2178E76E13A0605900B04AD4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E76D13A0605800B04AD4 /* icon.png */; };
+		2178E77213A06F8F00B04AD4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E77113A06F8F00B04AD4 /* settings.png */; };
+		2178E77413A070DB00B04AD4 /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2178E77313A070DB00B04AD4 /* Refresh.png */; };
 		21D278B8134BF0BB0063DB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B7134BF0BB0063DB03 /* UIKit.framework */; };
 		21D278BA134BF0BB0063DB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278B9134BF0BB0063DB03 /* Foundation.framework */; };
 		21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */; };
@@ -149,7 +151,9 @@
 		2178E76913A05A0D00B04AD4 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		2178E76B13A05C0C00B04AD4 /* buttonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBg.png; sourceTree = "<group>"; };
 		2178E76D13A0605800B04AD4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		21D278B3134BF0BB0063DB03 /* Broken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broken.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2178E77113A06F8F00B04AD4 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		2178E77313A070DB00B04AD4 /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		21D278B3134BF0BB0063DB03 /* iBroke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBroke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D278B7134BF0BB0063DB03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D278B9134BF0BB0063DB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		21D278BB134BF0BB0063DB03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -297,7 +301,9 @@
 				2178E76D13A0605800B04AD4 /* icon.png */,
 				2178E76B13A05C0C00B04AD4 /* buttonBg.png */,
 				2178E76513A0568900B04AD4 /* Default.png */,
+				2178E77113A06F8F00B04AD4 /* settings.png */,
 				2174A94F13565A2C003869B2 /* blueButtonBg.png */,
+				2178E77313A070DB00B04AD4 /* Refresh.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -346,7 +352,7 @@
 		21D278B4134BF0BB0063DB03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21D278B3134BF0BB0063DB03 /* Broken.app */,
+				21D278B3134BF0BB0063DB03 /* iBroke.app */,
 				21D278D7134BF0BB0063DB03 /* BrokenTests.octest */,
 			);
 			name = Products;
@@ -443,7 +449,7 @@
 			);
 			name = Broken;
 			productName = Broken;
-			productReference = 21D278B3134BF0BB0063DB03 /* Broken.app */;
+			productReference = 21D278B3134BF0BB0063DB03 /* iBroke.app */;
 			productType = "com.apple.product-type.application";
 		};
 		21D278D6134BF0BB0063DB03 /* BrokenTests */ = {
@@ -518,6 +524,8 @@
 				2178E76A13A05A0D00B04AD4 /* Background.png in Resources */,
 				2178E76C13A05C0C00B04AD4 /* buttonBg.png in Resources */,
 				2178E76E13A0605900B04AD4 /* icon.png in Resources */,
+				2178E77213A06F8F00B04AD4 /* settings.png in Resources */,
+				2178E77413A070DB00B04AD4 /* Refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +685,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBroke;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -700,7 +708,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iBroke;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
