@@ -64,7 +64,7 @@
     [searchBar_ setShowsCancelButton:YES animated:YES];
     [searchBar_ setBarStyle:UIBarStyleBlackTranslucent];
     
-    [searchBar_ setPlaceholder:@"Search for a build"];
+    [searchBar_ setPlaceholder:@"Search builds"];
     [searchBar_ setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     [searchBar_ respondsToSelector:@selector(searchBarTapped)];
     [searchBar_ sizeToFit];
@@ -83,7 +83,6 @@
     [filterView setDelegate:self];
     
     [[self tableView] setTableFooterView:filterView];
-    //[[self view] layoutSubviews];
 
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:address]];
     [request setDelegate:self];
@@ -192,33 +191,6 @@
   
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -302,6 +274,8 @@
                                            otherButtonTitles:nil, nil] autorelease];
     [alert show];
   }
+  
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - SearchBarDelegate
@@ -387,7 +361,6 @@
 
 - (void)filterAllBuilds;
 {
-  NSLog(@"Filtering All Builds");
   [self setBuilds:(NSMutableArray *)allBuilds_];
   [[self tableView] reloadData];
 }
@@ -395,7 +368,6 @@
 - (void)filterFailingBuilds;
 {
   [self setBuilds:(NSMutableArray *)allBuilds_];
-  NSLog(@"Filtering Failing Builds");
   NSMutableArray *failingBuilds = [[[NSMutableArray alloc] init] autorelease];
   
 	for (Build *build in _builds) {
@@ -410,11 +382,12 @@
 - (void)filterPassingBuilds;
 {
   [self setBuilds:(NSMutableArray *)allBuilds_];
-  NSLog(@"Filtering Passing Builds");
   NSMutableArray *failingBuilds = [[[NSMutableArray alloc] init] autorelease];
   
-	for (Build *build in _builds) {
-    if ([build isStable]) {
+	for (Build *build in _builds)
+  {
+    if ([build isStable])
+    {
       [failingBuilds insertObject:build atIndex:0];
     }
   }

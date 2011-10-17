@@ -12,10 +12,12 @@
 @interface BrokenAppDelegate : NSObject <UIApplicationDelegate> {
 	JenkinsInstanceController *jenkins_instance_controller;
   BuildsController *builds_controller;
+  UITabBarController *filterBuildsController;
 }
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, retain) UITabBarController *filterBuildsController;
 
 - (void)displaySplash;
 - (void)delayedHideSplash:(UIView *)splash;

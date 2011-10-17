@@ -11,7 +11,7 @@
 
 @interface JenkinsInstanceController : UIViewController 
 {
-  BuildsController *builds;   
+  BuildsController *builds;
 }
 
 @property (nonatomic, retain) UITextField *host;

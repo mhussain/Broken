@@ -27,7 +27,6 @@
 		210B6957134C67C500C210B9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B6953134C67C400C210B9 /* CFNetwork.framework */; };
 		210B6958134C67C500C210B9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B6955134C67C400C210B9 /* MobileCoreServices.framework */; };
 		210B6959134C67C500C210B9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B6956134C67C400C210B9 /* SystemConfiguration.framework */; };
-		210B695B134C680100C210B9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B695A134C680100C210B9 /* libz.1.2.3.dylib */; };
 		210B695D134C685A00C210B9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 210B695C134C685A00C210B9 /* libz.1.1.3.dylib */; };
 		210B6961134C687E00C210B9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B695F134C687E00C210B9 /* ASIAuthenticationDialog.m */; };
 		21384E31135C32BD00630875 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21384E30135C32BD00630875 /* QuartzCore.framework */; };
@@ -125,7 +124,6 @@
 		210B6953134C67C400C210B9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		210B6955134C67C400C210B9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		210B6956134C67C400C210B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		210B695A134C680100C210B9 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		210B695C134C685A00C210B9 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		210B695E134C687E00C210B9 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = "lib/asi-http-request/Classes/ASIAuthenticationDialog.h"; sourceTree = "<group>"; };
 		210B695F134C687E00C210B9 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = "lib/asi-http-request/Classes/ASIAuthenticationDialog.m"; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				21384E31135C32BD00630875 /* QuartzCore.framework in Frameworks */,
 				2174AA0713567045003869B2 /* libIBAForms.a in Frameworks */,
 				210B695D134C685A00C210B9 /* libz.1.1.3.dylib in Frameworks */,
-				210B695B134C680100C210B9 /* libz.1.2.3.dylib in Frameworks */,
 				210B6957134C67C500C210B9 /* CFNetwork.framework in Frameworks */,
 				21D278BC134BF0BB0063DB03 /* CoreGraphics.framework in Frameworks */,
 				210B6958134C67C500C210B9 /* MobileCoreServices.framework in Frameworks */,
@@ -387,7 +384,6 @@
 				21384E30135C32BD00630875 /* QuartzCore.framework */,
 				2174AA0613567045003869B2 /* libIBAForms.a */,
 				210B695C134C685A00C210B9 /* libz.1.1.3.dylib */,
-				210B695A134C680100C210B9 /* libz.1.2.3.dylib */,
 				2174A9FD1356703C003869B2 /* IBAForms.xcodeproj */,
 				210B6953134C67C400C210B9 /* CFNetwork.framework */,
 				210B6955134C67C400C210B9 /* MobileCoreServices.framework */,
@@ -500,6 +496,7 @@
 		21D278AA134BF0BB0063DB03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "REA Group";
 			};
 			buildConfigurationList = 21D278AD134BF0BB0063DB03 /* Build configuration list for PBXProject "Broken" */;
@@ -702,6 +699,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Broken/Broken-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"\"$(SRCROOT)/Third Party/ibaforms/library/build/headers\"",
 					"$(BUILT_PRODUCTS_DIR)/../headers",
@@ -728,6 +726,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Broken/Broken-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = "Broken/Broken-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -752,6 +751,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BrokenTests/BrokenTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "BrokenTests/BrokenTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -774,6 +774,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BrokenTests/BrokenTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "BrokenTests/BrokenTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",

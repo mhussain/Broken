@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21D278B2134BF0BB0063DB03"
-               BuildableName = "Broken.app"
+               BuildableName = "iBroke.app"
                BlueprintName = "Broken"
                ReferencedContainer = "container:Broken.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21D278B2134BF0BB0063DB03"
-            BuildableName = "Broken.app"
+            BuildableName = "iBroke.app"
             BlueprintName = "Broken"
             ReferencedContainer = "container:Broken.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21D278B2134BF0BB0063DB03"
-            BuildableName = "Broken.app"
+            BuildableName = "iBroke.app"
             BlueprintName = "Broken"
             ReferencedContainer = "container:Broken.xcodeproj">
          </BuildableReference>

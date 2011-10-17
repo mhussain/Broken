@@ -12,6 +12,7 @@
 
 @synthesize window=_window;
 @synthesize navigationController=_navigationController;
+@synthesize filterBuildsController = filterBuildsController_;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -19,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 {
   _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  filterBuildsController = [[UITabBarController alloc] init];
   
   _navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
   [[_navigationController navigationBar] setBarStyle:UIBarStyleBlack];
@@ -30,20 +33,24 @@
     
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   
-  if ([defaults objectForKey:@"host"]) {
+  if ([defaults objectForKey:@"host"])
+  {
 		builds_controller = [[BuildsController alloc] initWithStyle:UITableViewStyleGrouped defaults:defaults];
     [_navigationController pushViewController:builds_controller animated:YES];
   }
-  else {
+  else
+  {
     jenkins_instance_controller = [[JenkinsInstanceController alloc] initWithNibName:nil bundle:nil];
     [_navigationController pushViewController:jenkins_instance_controller animated:YES];
   }
-  
+    
   [_window setRootViewController:_navigationController];
-
+  
   [self setWindow:_window];
-  [[self window] makeKeyAndVisible];
   [self displaySplash];
+  
+  [[self window] addSubview:[filterBuildsController view]];
+  [[self window] makeKeyAndVisible];
   
   return YES;
 }
@@ -119,8 +126,9 @@
      */
 }
 
-- (void)dealloc
+- (void)dealloc;
 {
+  [filterBuildsController_ release];
 	[jenkins_instance_controller release];
   [_window release];
   [builds_controller release];
